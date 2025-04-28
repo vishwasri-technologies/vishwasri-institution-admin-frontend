@@ -77,3 +77,12 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+# Ignore all DLLs, pdb, and other large binary files
+*.dll
+*.pdb
+*.exe
+/windows/x64/Debug/
+/windows/AppPackages/
+
+windows/Adminapp/x64/Debug/pch.pch
+windows/x64/Debug/Adminapp/Microsoft.ReactNative.pdb
