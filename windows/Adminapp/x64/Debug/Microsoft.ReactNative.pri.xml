@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="Microsoft.ReactNative" version="1.0" primary="true">
+		<Qualifiers/>
+		<ResourceMapSubtree name="Files">
+			<ResourceMapSubtree name="Microsoft.ReactNative">
+				<NamedResource name="DevMenuControl.xbf" uri="ms-resource://Microsoft.ReactNative/Files/Microsoft.ReactNative/DevMenuControl.xbf">
+					<Candidate type="Path">
+						<Value>Microsoft.ReactNative\DevMenuControl.xbf</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>
