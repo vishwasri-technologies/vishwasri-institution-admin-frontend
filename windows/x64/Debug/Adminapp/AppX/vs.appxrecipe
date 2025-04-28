@@ -18,7 +18,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\AppX</LayoutDir>
-    <RegisteredManifestChecksum>7A901470EA3A794A7C951694DC0163B310C75F3CBE0BAB6B6AC8238720D829E7</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>19DF7BC291002F1317165751433363EFAC09680F6EBD6C3313BF025B1E146438</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>f6cdc298-8998-474c-8cbb-1a421cc687a9_1.0.0.0_x64__0x1r3e7dampye</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>f6cdc298-8998-474c-8cbb-1a421cc687a9_0x1r3e7dampye!App</RegisteredUserModeAppID>
     <RegisteredPackageID>f6cdc298-8998-474c-8cbb-1a421cc687a9</RegisteredPackageID>
@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-28T06:31:32.663</Modified>
+      <Modified>2025-04-28T11:34:39.525</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\Adminapp.exe">
       <PackagePath>Adminapp.exe</PackagePath>
-      <Modified>2025-04-28T06:31:16.036</Modified>
+      <Modified>2025-04-28T11:34:37.366</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\.nuget\packages\microsoft.web.webview2\1.0.1264.42\build\..\runtimes\win-x64\native_uap\Microsoft.Web.WebView2.Core.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.dll</PackagePath>
@@ -51,7 +51,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\node_modules\react-native-windows\target\x64\Debug\Microsoft.ReactNative\Microsoft.ReactNative.winmd">
       <PackagePath>Microsoft.ReactNative.winmd</PackagePath>
-      <Modified>2025-04-28T06:15:33.713</Modified>
+      <Modified>2025-04-28T11:25:08.984</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\.nuget\packages\microsoft.web.webview2\1.0.1264.42\lib\Microsoft.Web.WebView2.Core.winmd">
       <PackagePath>Microsoft.Web.WebView2.Core.winmd</PackagePath>
@@ -59,7 +59,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\Adminapp.winmd">
       <PackagePath>Adminapp.winmd</PackagePath>
-      <Modified>2025-04-28T06:30:08.197</Modified>
+      <Modified>2025-04-28T11:33:55.852</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\node_modules\react-native-windows\target\x64\Debug\Microsoft.ReactNative\Microsoft.ReactNative\DevMenuControl.xbf">
       <PackagePath>Microsoft.ReactNative\DevMenuControl.xbf</PackagePath>
@@ -67,37 +67,37 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\Adminapp\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2025-04-28T05:30:46.840</Modified>
+      <Modified>2025-04-28T07:18:55.683</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\Adminapp\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-28T05:30:46.840</Modified>
+      <Modified>2025-04-28T07:18:55.684</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\Adminapp\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-28T05:30:46.840</Modified>
+      <Modified>2025-04-28T07:18:55.685</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\Adminapp\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-28T05:30:46.840</Modified>
+      <Modified>2025-04-28T07:18:55.685</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\Adminapp\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-28T05:30:46.840</Modified>
+      <Modified>2025-04-28T07:18:55.686</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\Adminapp\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-28T05:30:46.840</Modified>
+      <Modified>2025-04-28T07:18:55.687</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\Adminapp\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-28T05:30:46.840</Modified>
+      <Modified>2025-04-28T07:18:55.687</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.22621.0\\redist\Debug\X64\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -109,7 +109,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-04-28T06:31:31.249</Modified>
+      <Modified>2025-04-28T11:34:38.597</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
