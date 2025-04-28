@@ -86,3 +86,4 @@ yarn-error.log
 
 windows/Adminapp/x64/Debug/pch.pch
 windows/x64/Debug/Adminapp/Microsoft.ReactNative.pdb
+/windows
