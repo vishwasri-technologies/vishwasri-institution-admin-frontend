@@ -37,11 +37,23 @@
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\node_modules\react-native-windows\target\x64\Debug\Microsoft.ReactNative\Microsoft.ReactNative.dll">
       <PackagePath>Microsoft.ReactNative.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\ReactNativePicker\ReactNativePicker.dll">
+      <PackagePath>ReactNativePicker.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\RNScreens\RNScreens.dll">
+      <PackagePath>RNScreens.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\node_modules\react-native-windows\target\x64\Debug\Microsoft.ReactNative\Microsoft.ReactNative.winmd">
       <PackagePath>Microsoft.ReactNative.winmd</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\.nuget\packages\microsoft.web.webview2\1.0.1264.42\lib\Microsoft.Web.WebView2.Core.winmd">
       <PackagePath>Microsoft.Web.WebView2.Core.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\ReactNativePicker\ReactNativePicker.winmd">
+      <PackagePath>ReactNativePicker.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\RNScreens\RNScreens.winmd">
+      <PackagePath>RNScreens.winmd</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\Adminapp.winmd">
       <PackagePath>Adminapp.winmd</PackagePath>

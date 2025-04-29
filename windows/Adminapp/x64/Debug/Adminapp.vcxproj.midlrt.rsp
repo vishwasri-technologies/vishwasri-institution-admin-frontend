@@ -1,6 +1,8 @@
 /reference "C:\Users\prash\.nuget\packages\microsoft.ui.xaml\2.8.0\lib\uap10.0\Microsoft.UI.Xaml.winmd"
 /reference "C:\Users\prash\.nuget\packages\microsoft.web.webview2\1.0.1264.42\lib\Microsoft.Web.WebView2.Core.winmd"
 /reference "C:\Users\prash\Adminapp\node_modules\react-native-windows\target\x64\Debug\Microsoft.ReactNative\Microsoft.ReactNative.winmd"
+/reference "C:\Users\prash\Adminapp\windows\x64\Debug\ReactNativePicker\ReactNativePicker.winmd"
+/reference "C:\Users\prash\Adminapp\windows\x64\Debug\RNScreens\RNScreens.winmd"
 /reference "C:\Program Files (x86)\Windows Kits\10\References\10.0.22621.0\Windows.AI.MachineLearning.MachineLearningContract\5.0.0.0\Windows.AI.MachineLearning.MachineLearningContract.winmd"
 /reference "C:\Program Files (x86)\Windows Kits\10\References\10.0.22621.0\Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract\2.0.0.0\Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract.winmd"
 /reference "C:\Program Files (x86)\Windows Kits\10\References\10.0.22621.0\Windows.ApplicationModel.Calls.Background.CallsBackgroundContract\4.0.0.0\Windows.ApplicationModel.Calls.Background.CallsBackgroundContract.winmd"

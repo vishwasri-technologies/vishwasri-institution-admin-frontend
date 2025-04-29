@@ -11,8 +11,17 @@
     "windows": "npx @react-native-community/cli run-windows"
   },
   "dependencies": {
+    "@react-native-picker/picker": "^2.11.0",
+    "@react-navigation/native": "^7.1.6",
+    "@react-navigation/native-stack": "^7.3.10",
+    "@react-navigation/stack": "^7.2.10",
     "react": "19.0.0",
     "react-native": "0.78.0",
+    "react-native-gesture-handler": "^2.25.0",
+    "react-native-reanimated": "^3.17.5",
+    "react-native-safe-area-context": "^5.4.0",
+    "react-native-screens": "^4.10.0",
+    "react-native-vector-icons": "^10.2.0",
     "react-native-windows": "^0.78.4"
   },
   "devDependencies": {
@@ -31,10 +40,10 @@
     "@types/react-test-renderer": "^19.0.0",
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
+    "metro-config": "^0.81.4",
     "prettier": "2.8.8",
     "react-test-renderer": "19.0.0",
-    "typescript": "5.0.4",
-    "metro-config": "^0.81.4"
+    "typescript": "5.0.4"
   },
   "engines": {
     "node": ">=18"

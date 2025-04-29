@@ -18,7 +18,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\AppX</LayoutDir>
-    <RegisteredManifestChecksum>19DF7BC291002F1317165751433363EFAC09680F6EBD6C3313BF025B1E146438</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>50AB28D1B7C3A45D204281525A6E2899C82DFFD20CE159285FA5D3161A2158D4</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>f6cdc298-8998-474c-8cbb-1a421cc687a9_1.0.0.0_x64__0x1r3e7dampye</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>f6cdc298-8998-474c-8cbb-1a421cc687a9_0x1r3e7dampye!App</RegisteredUserModeAppID>
     <RegisteredPackageID>f6cdc298-8998-474c-8cbb-1a421cc687a9</RegisteredPackageID>
@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-28T11:34:39.525</Modified>
+      <Modified>2025-04-29T04:50:20.799</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\Adminapp.exe">
       <PackagePath>Adminapp.exe</PackagePath>
-      <Modified>2025-04-28T11:34:37.366</Modified>
+      <Modified>2025-04-29T04:50:18.995</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\.nuget\packages\microsoft.web.webview2\1.0.1264.42\build\..\runtimes\win-x64\native_uap\Microsoft.Web.WebView2.Core.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.dll</PackagePath>
@@ -49,6 +49,14 @@
       <PackagePath>Microsoft.ReactNative.dll</PackagePath>
       <Modified>2025-04-28T06:29:48.317</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\ReactNativePicker\ReactNativePicker.dll">
+      <PackagePath>ReactNativePicker.dll</PackagePath>
+      <Modified>2025-04-29T04:29:18.138</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\RNScreens\RNScreens.dll">
+      <PackagePath>RNScreens.dll</PackagePath>
+      <Modified>2025-04-29T04:30:22.070</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\node_modules\react-native-windows\target\x64\Debug\Microsoft.ReactNative\Microsoft.ReactNative.winmd">
       <PackagePath>Microsoft.ReactNative.winmd</PackagePath>
       <Modified>2025-04-28T11:25:08.984</Modified>
@@ -57,9 +65,17 @@
       <PackagePath>Microsoft.Web.WebView2.Core.winmd</PackagePath>
       <Modified>2022-06-28T22:02:58.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\ReactNativePicker\ReactNativePicker.winmd">
+      <PackagePath>ReactNativePicker.winmd</PackagePath>
+      <Modified>2025-04-29T04:24:06.474</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\RNScreens\RNScreens.winmd">
+      <PackagePath>RNScreens.winmd</PackagePath>
+      <Modified>2025-04-29T04:29:31.118</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\Adminapp.winmd">
       <PackagePath>Adminapp.winmd</PackagePath>
-      <Modified>2025-04-28T11:33:55.852</Modified>
+      <Modified>2025-04-29T04:49:52.354</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\node_modules\react-native-windows\target\x64\Debug\Microsoft.ReactNative\Microsoft.ReactNative\DevMenuControl.xbf">
       <PackagePath>Microsoft.ReactNative\DevMenuControl.xbf</PackagePath>
@@ -109,7 +125,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-04-28T11:34:38.597</Modified>
+      <Modified>2025-04-29T04:50:19.866</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

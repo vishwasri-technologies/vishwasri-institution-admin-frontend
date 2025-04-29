@@ -38,6 +38,8 @@ C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\.winmd_cache\$Microsoft.React
 C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\.winmd_cache\$Microsoft.Web.WebView2.Core.winmd_637920505780000000.json
 C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\package.map.txt
 C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\_pkginfo.txt
-C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\Symbols\Adminapp.pdb
-C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\Symbols\Microsoft.ReactNative.pdb
 C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\_installerinfo.log
+C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\ReactNativePicker.pri.xml
+C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\RNScreens.pri.xml
+C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\.winmd_cache\$ReactNativePicker.winmd_638814974464744960.json
+C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\.winmd_cache\$RNScreens.winmd_638814977711186864.json

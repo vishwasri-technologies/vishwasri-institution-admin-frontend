@@ -1,6 +1,8 @@
 -v -metadata_dir "C:\Users\prash\.nuget\packages\microsoft.ui.xaml\2.8.0\lib\uap10.0\."
 -metadata_dir "C:\Users\prash\.nuget\packages\microsoft.web.webview2\1.0.1264.42\lib\."
 -metadata_dir "C:\Users\prash\Adminapp\node_modules\react-native-windows\target\x64\Debug\Microsoft.ReactNative\."
+-metadata_dir "C:\Users\prash\Adminapp\windows\x64\Debug\ReactNativePicker\."
+-metadata_dir "C:\Users\prash\Adminapp\windows\x64\Debug\RNScreens\."
 -metadata_dir "C:\Program Files (x86)\Windows Kits\10\References\10.0.22621.0\Windows.AI.MachineLearning.MachineLearningContract\5.0.0.0\."
 -metadata_dir "C:\Program Files (x86)\Windows Kits\10\References\10.0.22621.0\Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract\2.0.0.0\."
 -metadata_dir "C:\Program Files (x86)\Windows Kits\10\References\10.0.22621.0\Windows.ApplicationModel.Calls.Background.CallsBackgroundContract\4.0.0.0\."

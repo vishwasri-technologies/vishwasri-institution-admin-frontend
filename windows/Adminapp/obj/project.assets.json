@@ -118,6 +118,34 @@
         "runtime": {
           "bin/placeholder/ReactCommon.dll": {}
         }
+      },
+      "ReactNativePicker/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        }
+      },
+      "RNScreens/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/RNScreens.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RNScreens.dll": {}
+        }
       }
     },
     "native,Version=v0.0/win10-arm": {
@@ -222,6 +250,34 @@
         },
         "runtime": {
           "bin/placeholder/ReactCommon.dll": {}
+        }
+      },
+      "ReactNativePicker/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        }
+      },
+      "RNScreens/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/RNScreens.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RNScreens.dll": {}
         }
       }
     },
@@ -328,6 +384,34 @@
         "runtime": {
           "bin/placeholder/ReactCommon.dll": {}
         }
+      },
+      "ReactNativePicker/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        }
+      },
+      "RNScreens/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/RNScreens.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RNScreens.dll": {}
+        }
       }
     },
     "native,Version=v0.0/win10-arm64-aot": {
@@ -432,6 +516,34 @@
         },
         "runtime": {
           "bin/placeholder/ReactCommon.dll": {}
+        }
+      },
+      "ReactNativePicker/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        }
+      },
+      "RNScreens/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/RNScreens.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RNScreens.dll": {}
         }
       }
     },
@@ -538,6 +650,34 @@
         "runtime": {
           "bin/placeholder/ReactCommon.dll": {}
         }
+      },
+      "ReactNativePicker/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        }
+      },
+      "RNScreens/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/RNScreens.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RNScreens.dll": {}
+        }
       }
     },
     "native,Version=v0.0/win10-x64-aot": {
@@ -642,6 +782,34 @@
         },
         "runtime": {
           "bin/placeholder/ReactCommon.dll": {}
+        }
+      },
+      "ReactNativePicker/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        }
+      },
+      "RNScreens/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/RNScreens.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RNScreens.dll": {}
         }
       }
     },
@@ -748,6 +916,34 @@
         "runtime": {
           "bin/placeholder/ReactCommon.dll": {}
         }
+      },
+      "ReactNativePicker/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        }
+      },
+      "RNScreens/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/RNScreens.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RNScreens.dll": {}
+        }
       }
     },
     "native,Version=v0.0/win10-x86-aot": {
@@ -852,6 +1048,34 @@
         },
         "runtime": {
           "bin/placeholder/ReactCommon.dll": {}
+        }
+      },
+      "ReactNativePicker/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativePicker.dll": {}
+        }
+      },
+      "RNScreens/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/RNScreens.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RNScreens.dll": {}
         }
       }
     }
@@ -16759,6 +16983,16 @@
       "type": "project",
       "path": "../../node_modules/react-native-windows/ReactCommon/ReactCommon.vcxproj",
       "msbuildProject": "../../node_modules/react-native-windows/ReactCommon/ReactCommon.vcxproj"
+    },
+    "ReactNativePicker/1.0.0": {
+      "type": "project",
+      "path": "../../node_modules/@react-native-picker/picker/windows/ReactNativePicker/ReactNativePicker.vcxproj",
+      "msbuildProject": "../../node_modules/@react-native-picker/picker/windows/ReactNativePicker/ReactNativePicker.vcxproj"
+    },
+    "RNScreens/1.0.0": {
+      "type": "project",
+      "path": "../../node_modules/react-native-screens/windows/RNScreens/RNScreens.vcxproj",
+      "msbuildProject": "../../node_modules/react-native-screens/windows/RNScreens/RNScreens.vcxproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -16766,7 +17000,9 @@
       "Microsoft.JavaScript.Hermes >= 0.1.23",
       "Microsoft.ReactNative >= 1.0.0",
       "Microsoft.UI.Xaml >= 2.8.0",
-      "Microsoft.Windows.CppWinRT >= 2.0.230706.1"
+      "Microsoft.Windows.CppWinRT >= 2.0.230706.1",
+      "RNScreens >= 1.0.0",
+      "ReactNativePicker >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -16803,6 +17039,12 @@
       "frameworks": {
         "native": {
           "projectReferences": {
+            "C:\\Users\\prash\\Adminapp\\node_modules\\@react-native-picker\\picker\\windows\\ReactNativePicker\\ReactNativePicker.vcxproj": {
+              "projectPath": "C:\\Users\\prash\\Adminapp\\node_modules\\@react-native-picker\\picker\\windows\\ReactNativePicker\\ReactNativePicker.vcxproj"
+            },
+            "C:\\Users\\prash\\Adminapp\\node_modules\\react-native-screens\\windows\\RNScreens\\RNScreens.vcxproj": {
+              "projectPath": "C:\\Users\\prash\\Adminapp\\node_modules\\react-native-screens\\windows\\RNScreens\\RNScreens.vcxproj"
+            },
             "C:\\Users\\prash\\Adminapp\\node_modules\\react-native-windows\\Microsoft.ReactNative\\Microsoft.ReactNative.vcxproj": {
               "projectPath": "C:\\Users\\prash\\Adminapp\\node_modules\\react-native-windows\\Microsoft.ReactNative\\Microsoft.ReactNative.vcxproj"
             }
