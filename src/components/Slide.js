@@ -42,7 +42,8 @@
 
 
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet,ScrollView } from 'react-native';
+
 
 const sections = [
   'Student Management',
@@ -57,17 +58,21 @@ const sections = [
 ];
 
 const Sidebar = ({ onSelectSection }) => (
+  
   <View>
   <View style={styles.container}>
+  <ScrollView>
     {sections.map(section => (
       <TouchableOpacity key={section} onPress={() => onSelectSection(section)}>
         <Text style={styles.link}>{section}</Text>
       </TouchableOpacity>
     ))}
+    </ScrollView>
 
   </View>
 
   </View>
+
 );
 
 const styles = StyleSheet.create({
