@@ -43,3 +43,5 @@ C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\ReactNativePicker.pri.xml
 C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\RNScreens.pri.xml
 C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\.winmd_cache\$ReactNativePicker.winmd_638814974464744960.json
 C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\.winmd_cache\$RNScreens.winmd_638814977711186864.json
+C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\ReactNativeAsyncStorage.pri.xml
+C:\Users\prash\Adminapp\windows\Adminapp\x64\Debug\.winmd_cache\$ReactNativeAsyncStorage.winmd_638817610999219818.json

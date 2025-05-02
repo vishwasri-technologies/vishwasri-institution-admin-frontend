@@ -119,6 +119,20 @@
           "bin/placeholder/ReactCommon.dll": {}
         }
       },
+      "ReactNativeAsyncStorage/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
+        }
+      },
       "ReactNativePicker/1.0.0": {
         "type": "project",
         "framework": "native,Version=v0.0",
@@ -250,6 +264,20 @@
         },
         "runtime": {
           "bin/placeholder/ReactCommon.dll": {}
+        }
+      },
+      "ReactNativeAsyncStorage/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
         }
       },
       "ReactNativePicker/1.0.0": {
@@ -385,6 +413,20 @@
           "bin/placeholder/ReactCommon.dll": {}
         }
       },
+      "ReactNativeAsyncStorage/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
+        }
+      },
       "ReactNativePicker/1.0.0": {
         "type": "project",
         "framework": "native,Version=v0.0",
@@ -516,6 +558,20 @@
         },
         "runtime": {
           "bin/placeholder/ReactCommon.dll": {}
+        }
+      },
+      "ReactNativeAsyncStorage/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
         }
       },
       "ReactNativePicker/1.0.0": {
@@ -651,6 +707,20 @@
           "bin/placeholder/ReactCommon.dll": {}
         }
       },
+      "ReactNativeAsyncStorage/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
+        }
+      },
       "ReactNativePicker/1.0.0": {
         "type": "project",
         "framework": "native,Version=v0.0",
@@ -782,6 +852,20 @@
         },
         "runtime": {
           "bin/placeholder/ReactCommon.dll": {}
+        }
+      },
+      "ReactNativeAsyncStorage/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
         }
       },
       "ReactNativePicker/1.0.0": {
@@ -917,6 +1001,20 @@
           "bin/placeholder/ReactCommon.dll": {}
         }
       },
+      "ReactNativeAsyncStorage/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
+        }
+      },
       "ReactNativePicker/1.0.0": {
         "type": "project",
         "framework": "native,Version=v0.0",
@@ -1048,6 +1146,20 @@
         },
         "runtime": {
           "bin/placeholder/ReactCommon.dll": {}
+        }
+      },
+      "ReactNativeAsyncStorage/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactNativeAsyncStorage.dll": {}
         }
       },
       "ReactNativePicker/1.0.0": {
@@ -16984,6 +17096,11 @@
       "path": "../../node_modules/react-native-windows/ReactCommon/ReactCommon.vcxproj",
       "msbuildProject": "../../node_modules/react-native-windows/ReactCommon/ReactCommon.vcxproj"
     },
+    "ReactNativeAsyncStorage/1.0.0": {
+      "type": "project",
+      "path": "../../node_modules/@react-native-async-storage/async-storage/windows/ReactNativeAsyncStorage/ReactNativeAsyncStorage.vcxproj",
+      "msbuildProject": "../../node_modules/@react-native-async-storage/async-storage/windows/ReactNativeAsyncStorage/ReactNativeAsyncStorage.vcxproj"
+    },
     "ReactNativePicker/1.0.0": {
       "type": "project",
       "path": "../../node_modules/@react-native-picker/picker/windows/ReactNativePicker/ReactNativePicker.vcxproj",
@@ -17002,6 +17119,7 @@
       "Microsoft.UI.Xaml >= 2.8.0",
       "Microsoft.Windows.CppWinRT >= 2.0.230706.1",
       "RNScreens >= 1.0.0",
+      "ReactNativeAsyncStorage >= 1.0.0",
       "ReactNativePicker >= 1.0.0"
     ]
   },
@@ -17039,6 +17157,9 @@
       "frameworks": {
         "native": {
           "projectReferences": {
+            "C:\\Users\\prash\\Adminapp\\node_modules\\@react-native-async-storage\\async-storage\\windows\\ReactNativeAsyncStorage\\ReactNativeAsyncStorage.vcxproj": {
+              "projectPath": "C:\\Users\\prash\\Adminapp\\node_modules\\@react-native-async-storage\\async-storage\\windows\\ReactNativeAsyncStorage\\ReactNativeAsyncStorage.vcxproj"
+            },
             "C:\\Users\\prash\\Adminapp\\node_modules\\@react-native-picker\\picker\\windows\\ReactNativePicker\\ReactNativePicker.vcxproj": {
               "projectPath": "C:\\Users\\prash\\Adminapp\\node_modules\\@react-native-picker\\picker\\windows\\ReactNativePicker\\ReactNativePicker.vcxproj"
             },

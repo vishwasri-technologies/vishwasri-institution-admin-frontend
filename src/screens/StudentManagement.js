@@ -1,32 +1,7 @@
-// import React from 'react';
-// import { View, Text,   StyleSheet} from 'react-native';
-
-
-
-
-
-// const StudentManagement = () => (
-//     <View>
-//         <Text    style={styles.logo1}>Hiii</Text>
-//     </View>
- 
-// );
-// const styles = StyleSheet.create({
-//     logo1:{
-//         color:'black',
-
-//     }
-// })
-
-
-// export default StudentManagement;
-
-
 
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TextInput,Image } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const students = [
   { name: 'Allary Hitesh', roll: '214420862852', attendance: '85%', status: 'Paid', contact: '9638520147' },
@@ -136,7 +111,11 @@ const StudentManagement = () => {
           zIndex={2000}
         />
        <View style={styles.searchContainer}>
-  <Icon name="search" size={18} color="gray" style={styles.searchIcon} />
+ <Image
+    source={require('../assets/search.png')}
+    style={styles.searchIconImage}
+    resizeMode="contain"
+  />
   <TextInput
     placeholder="Search by roll number"
     placeholderTextColor="gray"
@@ -191,14 +170,17 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     height: 40,
   },
+  searchIconImage:{
+    height:20,
+    width:25,
 
-  
+  },
   rowHeader: {
     flexDirection: 'row',
     backgroundColor: '#d8bfd8',
     padding: 10,
     width:wp('90%'),
-    
+
   },
   row: {
     flexDirection: 'row',
@@ -231,9 +213,8 @@ const styles = StyleSheet.create({
     // width: 150,
     backgroundColor: '#f5f5f5',
     color:'black',
-    
+
   },
-  
 });
 
 export default StudentManagement;

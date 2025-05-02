@@ -66,6 +66,12 @@
     </Extension>
     <Extension Category="windows.activatableClass.inProcessServer">
       <InProcessServer>
+        <Path>ReactNativeAsyncStorage.dll</Path>
+        <ActivatableClass ActivatableClassId="ReactNativeAsyncStorage.ReactPackageProvider" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
         <Path>ReactNativePicker.dll</Path>
         <ActivatableClass ActivatableClassId="ReactNativePicker.ReactPickerView" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="ReactNativePicker.ReactPackageProvider" ThreadingModel="both" />
