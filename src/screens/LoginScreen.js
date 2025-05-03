@@ -23,6 +23,7 @@ const LoginScreen = ({navigation }) => {
       </View>
       <View style={styles.rightPanel}>
         <Text style={styles.header}>Log in</Text>
+        <Text style={{color:'black',textAlign:'center',fontSize: 15,  marginBottom: 25,}}>Login to your account </Text>
 
         <Text style={styles.label}>Email/Phone</Text>
         <TextInput style={styles.input} placeholder="Enter your Email/Phone"  placeholderTextColor="#000" />
@@ -41,7 +42,9 @@ const LoginScreen = ({navigation }) => {
 
         <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Home')}>
           <Text style={styles.buttonText}>Login</Text>
+
         </TouchableOpacity>
+             <Text style={{color:'black',textAlign:'center',paddingTop:20,fontSize: 15}}>Already have an account?<Text style={{color:'#006BFF'}} onPress={()=> navigation.navigate('Signup')}>SignUp Here </Text></Text>
       </View>
     </View>
     </View>
@@ -105,7 +108,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: '700',
     color: '#1d7a8c',
-    marginBottom: 30,
+    marginBottom:7,
     textAlign: 'center',
   },
   label: {

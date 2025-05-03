@@ -7,6 +7,7 @@ import ForgotPassword from '../screens/FogotPassword';
 import Home from '../screens/Home';
 import TimetableScreen from '../screens/TimetableScreen';
 import AcademicCalender from '../screens/AcademicCalender';
+// import AttendanceManagement from '../screens/AttendanceManagement';
 
 
 const Stack = createStackNavigator();
@@ -21,6 +22,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="AcademicCalender" component={AcademicCalender} />
         <Stack.Screen name="TimetableScreen" component={TimetableScreen} />
+        {/* <Stack.Screen nmae="AttendanceManagement" component={AttendanceManagement}/> */}
 
       </Stack.Navigator>
     </NavigationContainer>

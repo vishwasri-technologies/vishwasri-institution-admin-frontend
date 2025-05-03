@@ -7,6 +7,7 @@ import StudentManagement from './StudentManagement';
 import FacultyManagement from './FacultyManagement';
 import TimetableScreen from './TimetableScreen';
 import AcademicCalendar from './AcademicCalender';
+import AttendanceManagement from './AttendanceManagement';
 
 
 
@@ -26,6 +27,8 @@ const Home = () => {
           return <AcademicCalendar />;
         case 'Timetable Management':
           return <TimetableScreen/>;
+        case 'Attendance Management':
+          return <AttendanceManagement/>
       default:
         return <DashboardGrid onSelect={setActiveScreen} />;
     }
@@ -35,7 +38,8 @@ const Home = () => {
     <View style={styles.container}>
       <Navbar />
       <View style={styles.content}>
-        <Sidebar onSelectSection={setActiveScreen} />
+      <Sidebar onSelectSection={setActiveScreen} selectedSection={activeScreen} />
+
         <View style={styles.mainContent}>{renderContent()}</View>
       </View>
     </View>
@@ -45,7 +49,7 @@ const Home = () => {
 const DashboardGrid = ({ onSelect }) => {
   const items = [
     'Student Management', 'Faculty Management', 'Academic Calender', 'Timetable Management',
-    'Attendance Monitoring', 'Fee & Payments', 'Exam & Results',
+    'Attendance Management', 'Fee & Payments', 'Exam & Results',
     'Announcements', 'Feedback & Complaints',
   ];
 

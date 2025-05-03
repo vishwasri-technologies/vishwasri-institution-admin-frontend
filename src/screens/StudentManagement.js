@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   cell: {
-    width: 200,
+    width: 160,
     color: '#000',
   },
   searchContainer: {
