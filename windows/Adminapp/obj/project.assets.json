@@ -64,6 +64,20 @@
           "bin/placeholder/Common.dll": {}
         }
       },
+      "DateTimePickerWindows/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
+        }
+      },
       "fmt/1.0.0": {
         "type": "project",
         "compile": {
@@ -209,6 +223,20 @@
         },
         "runtime": {
           "bin/placeholder/Common.dll": {}
+        }
+      },
+      "DateTimePickerWindows/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
         }
       },
       "fmt/1.0.0": {
@@ -358,6 +386,20 @@
           "bin/placeholder/Common.dll": {}
         }
       },
+      "DateTimePickerWindows/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
+        }
+      },
       "fmt/1.0.0": {
         "type": "project",
         "compile": {
@@ -503,6 +545,20 @@
         },
         "runtime": {
           "bin/placeholder/Common.dll": {}
+        }
+      },
+      "DateTimePickerWindows/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
         }
       },
       "fmt/1.0.0": {
@@ -652,6 +708,20 @@
           "bin/placeholder/Common.dll": {}
         }
       },
+      "DateTimePickerWindows/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
+        }
+      },
       "fmt/1.0.0": {
         "type": "project",
         "compile": {
@@ -797,6 +867,20 @@
         },
         "runtime": {
           "bin/placeholder/Common.dll": {}
+        }
+      },
+      "DateTimePickerWindows/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
         }
       },
       "fmt/1.0.0": {
@@ -946,6 +1030,20 @@
           "bin/placeholder/Common.dll": {}
         }
       },
+      "DateTimePickerWindows/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
+        }
+      },
       "fmt/1.0.0": {
         "type": "project",
         "compile": {
@@ -1091,6 +1189,20 @@
         },
         "runtime": {
           "bin/placeholder/Common.dll": {}
+        }
+      },
+      "DateTimePickerWindows/1.0.0": {
+        "type": "project",
+        "framework": "native,Version=v0.0",
+        "dependencies": {
+          "Microsoft.ReactNative": "1.0.0",
+          "Microsoft.UI.Xaml": "2.8.0"
+        },
+        "compile": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DateTimePickerWindows.dll": {}
         }
       },
       "fmt/1.0.0": {
@@ -17076,6 +17188,11 @@
       "path": "../../node_modules/react-native-windows/Common/Common.vcxproj",
       "msbuildProject": "../../node_modules/react-native-windows/Common/Common.vcxproj"
     },
+    "DateTimePickerWindows/1.0.0": {
+      "type": "project",
+      "path": "../../node_modules/@react-native-community/datetimepicker/windows/DateTimePickerWindows/DateTimePickerWindows.vcxproj",
+      "msbuildProject": "../../node_modules/@react-native-community/datetimepicker/windows/DateTimePickerWindows/DateTimePickerWindows.vcxproj"
+    },
     "fmt/1.0.0": {
       "type": "project",
       "path": "../../node_modules/react-native-windows/fmt/fmt.vcxproj",
@@ -17114,6 +17231,7 @@
   },
   "projectFileDependencyGroups": {
     "native,Version=v0.0": [
+      "DateTimePickerWindows >= 1.0.0",
       "Microsoft.JavaScript.Hermes >= 0.1.23",
       "Microsoft.ReactNative >= 1.0.0",
       "Microsoft.UI.Xaml >= 2.8.0",
@@ -17159,6 +17277,9 @@
           "projectReferences": {
             "C:\\Users\\prash\\Adminapp\\node_modules\\@react-native-async-storage\\async-storage\\windows\\ReactNativeAsyncStorage\\ReactNativeAsyncStorage.vcxproj": {
               "projectPath": "C:\\Users\\prash\\Adminapp\\node_modules\\@react-native-async-storage\\async-storage\\windows\\ReactNativeAsyncStorage\\ReactNativeAsyncStorage.vcxproj"
+            },
+            "C:\\Users\\prash\\Adminapp\\node_modules\\@react-native-community\\datetimepicker\\windows\\DateTimePickerWindows\\DateTimePickerWindows.vcxproj": {
+              "projectPath": "C:\\Users\\prash\\Adminapp\\node_modules\\@react-native-community\\datetimepicker\\windows\\DateTimePickerWindows\\DateTimePickerWindows.vcxproj"
             },
             "C:\\Users\\prash\\Adminapp\\node_modules\\@react-native-picker\\picker\\windows\\ReactNativePicker\\ReactNativePicker.vcxproj": {
               "projectPath": "C:\\Users\\prash\\Adminapp\\node_modules\\@react-native-picker\\picker\\windows\\ReactNativePicker\\ReactNativePicker.vcxproj"

@@ -40,11 +40,17 @@
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\ReactNativeAsyncStorage\ReactNativeAsyncStorage.dll">
       <PackagePath>ReactNativeAsyncStorage.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\DateTimePickerWindows\DateTimePicker.dll">
+      <PackagePath>DateTimePicker.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\ReactNativePicker\ReactNativePicker.dll">
       <PackagePath>ReactNativePicker.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\RNScreens\RNScreens.dll">
       <PackagePath>RNScreens.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\DateTimePickerWindows\DateTimePicker.winmd">
+      <PackagePath>DateTimePicker.winmd</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\node_modules\react-native-windows\target\x64\Debug\Microsoft.ReactNative\Microsoft.ReactNative.winmd">
       <PackagePath>Microsoft.ReactNative.winmd</PackagePath>

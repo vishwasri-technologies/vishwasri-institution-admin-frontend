@@ -8,6 +8,7 @@ import FacultyManagement from './FacultyManagement';
 import TimetableScreen from './TimetableScreen';
 import AcademicCalendar from './AcademicCalender';
 import AttendanceManagement from './AttendanceManagement';
+import AttendancebyClass from './AttendancebyClass';
 
 
 
@@ -29,6 +30,8 @@ const Home = () => {
           return <TimetableScreen/>;
         case 'Attendance Management':
           return <AttendanceManagement/>
+          case ' AttendancebyClass':
+            return < AttendancebyClass/>
       default:
         return <DashboardGrid onSelect={setActiveScreen} />;
     }

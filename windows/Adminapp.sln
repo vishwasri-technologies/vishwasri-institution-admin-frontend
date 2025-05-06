@@ -44,6 +44,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.ReactNative.Manag
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReactNativeAsyncStorage", "..\node_modules\@react-native-async-storage\async-storage\windows\ReactNativeAsyncStorage\ReactNativeAsyncStorage.vcxproj", "{4855D892-E16C-404D-8286-0089E0F7F9C4}"
 EndProject
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DateTimePicker", "..\node_modules\@react-native-community\datetimepicker\windows\DateTimePickerWindows\DateTimePickerWindows.vcxproj", "{0986A4DB-8E72-4BB7-AE32-7D9DF1758A9D}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\node_modules\react-native-windows\Shared\Shared.vcxitems*{2049dbe9-8d13-42c9-ae4b-413ae38fffd0}*SharedItemsImports = 9
@@ -217,6 +220,18 @@ Global
 		{4855D892-E16C-404D-8286-0089E0F7F9C4}.Release|x86.Build.0 = Release|Win32
 		{4855D892-E16C-404D-8286-0089E0F7F9C4}.Release|ARM64.ActiveCfg = Release|ARM64
 		{4855D892-E16C-404D-8286-0089E0F7F9C4}.Release|ARM64.Build.0 = Release|ARM64
+		{0986A4DB-8E72-4BB7-AE32-7D9DF1758A9D}.Debug|x64.ActiveCfg = Debug|x64
+		{0986A4DB-8E72-4BB7-AE32-7D9DF1758A9D}.Debug|x64.Build.0 = Debug|x64
+		{0986A4DB-8E72-4BB7-AE32-7D9DF1758A9D}.Debug|x86.ActiveCfg = Debug|Win32
+		{0986A4DB-8E72-4BB7-AE32-7D9DF1758A9D}.Debug|x86.Build.0 = Debug|Win32
+		{0986A4DB-8E72-4BB7-AE32-7D9DF1758A9D}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{0986A4DB-8E72-4BB7-AE32-7D9DF1758A9D}.Debug|ARM64.Build.0 = Debug|ARM64
+		{0986A4DB-8E72-4BB7-AE32-7D9DF1758A9D}.Release|x64.ActiveCfg = Release|x64
+		{0986A4DB-8E72-4BB7-AE32-7D9DF1758A9D}.Release|x64.Build.0 = Release|x64
+		{0986A4DB-8E72-4BB7-AE32-7D9DF1758A9D}.Release|x86.ActiveCfg = Release|Win32
+		{0986A4DB-8E72-4BB7-AE32-7D9DF1758A9D}.Release|x86.Build.0 = Release|Win32
+		{0986A4DB-8E72-4BB7-AE32-7D9DF1758A9D}.Release|ARM64.ActiveCfg = Release|ARM64
+		{0986A4DB-8E72-4BB7-AE32-7D9DF1758A9D}.Release|ARM64.Build.0 = Release|ARM64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

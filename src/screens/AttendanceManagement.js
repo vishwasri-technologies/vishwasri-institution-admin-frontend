@@ -1,19 +1,23 @@
+
+
 // import React, { useState } from 'react';
-// import { View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+// import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 // import DropDownPicker from 'react-native-dropdown-picker';
+// import { useNavigation } from '@react-navigation/native';
+
 
 // const AttendanceManagement = ({ onNavigate }) => {
-//     const [open, setOpen] = useState(false);
-//     const [value, setValue] = useState(null);
-//     const [items, setItems] = useState([
-//       { label: 'Computer Science', value: 'CSE' },
-//       { label: 'Electrical Engineering', value: 'EEE' },
-//       { label: 'Mechanical Engineering', value: 'ECE' }
-//     ]);
+//   const navigation = useNavigation();
+//   const [open, setOpen] = useState(false);
+//   const [value, setValue] = useState(null);
+//   const [items, setItems] = useState([
+//     { label: 'Computer Science', value: 'CSE' },
+//     { label: 'Electrical Engineering', value: 'EEE' },
+//     { label: 'Mechanical Engineering', value: 'MEC' }
+//   ]);
 
 //   return (
 //     <View style={styles.container}>
- 
 //       <View style={styles.dropdownWrapper}>
 //         <DropDownPicker
 //           open={open}
@@ -24,10 +28,13 @@
 //           setItems={setItems}
 //           placeholder="Select Course"
 //           style={styles.picker}
-//           dropDownContainerStyle={styles.dropdown}
+//           dropDownContainerStyle={styles.dropdownContainer}
+//           listItemContainerStyle={styles.listItem}
+//           placeholderStyle={styles.placeholder}
 //         />
 //       </View>
 
+//       {/* Rest of the unchanged components */}
 //       <TouchableOpacity style={[styles.card, { backgroundColor: '#d6c3ff' }]}>
 //         <Text style={styles.label}>Total Present Today</Text>
 //         <Text style={styles.bigText}>955</Text>
@@ -49,9 +56,10 @@
 
 //       <TouchableOpacity
 //         style={[styles.actionBtn, { backgroundColor: '#f5d5bc' }]}
-//         onPress={() => onNavigate('classSection')}
+//         onPress={() => navigation.navigate('AttendancebyClass')}
 //       >
 //         <Text style={styles.btnText}>View attendance by Class / Section</Text>
+//         <Text style={styles.arrow}>→</Text>
 //       </TouchableOpacity>
 
 //       <TouchableOpacity
@@ -59,37 +67,55 @@
 //         onPress={() => onNavigate('faculty')}
 //       >
 //         <Text style={styles.btnText}>Faculty attendance & Leave Management</Text>
+//         <Text style={styles.arrow}>→</Text>
 //       </TouchableOpacity>
 //     </View>
 //   );
 // };
 
 // const styles = StyleSheet.create({
-//   container: { padding: 20, backgroundColor: '#fff' },
-//   heading: { fontSize: 22, fontWeight: '600', marginBottom: 10 },
+//   container: { 
+//     padding: 20, 
+//     // backgroundColor: '#fff',
+//     flex: 1,
+//   },
 //   dropdownWrapper: {
-//     borderWidth: 1,
-//     borderColor: '#ccc',
-//     borderRadius: 8,
 //     marginBottom: 15,
-//     overflow: 'hidden',
+//     zIndex: 1,
 //   },
 //   picker: {
-//     height: 40,
-//     width: '100%',
+//     borderColor: '#ccc',
+//     borderRadius: 8,
+//     height: 50,
 //   },
-//   label: { fontSize: 16, fontWeight: '500' },
-//   bigText: { fontSize: 36, fontWeight: 'bold', color: '#000' },
+//   dropdownContainer: {
+//     borderColor: '#ccc',
+//     borderRadius: 8,
+//     marginTop: 2,
+//   },
+//   placeholder: {
+//     color: '#666',
+//     fontSize: 16,
+//   },
+//   listItem: {
+//     height: 40,
+//     justifyContent: 'center',
+//   },
+//   // Rest of the styles remain unchanged
+//   label: { fontSize: 16, fontWeight: '500', color: '#000',textAlign:'center'  },
+//   bigText: { fontSize: 36, fontWeight: 'bold', color: '#000' ,textAlign:'center', marginTop:20 },
 //   percent: { fontSize: 24, fontWeight: 'bold', color: '#000' },
 //   yearRow: {
 //     flexDirection: 'row',
 //     justifyContent: 'space-between',
 //     gap: 10,
-//     marginVertical: 15,
+//     marginVertical: 30,
+//     height:90,
 //   },
 //   card: {
 //     padding: 20,
-//     width: 180,
+//     width: 200,
+//     height:150,
 //     marginVertical: 10,
 //     borderRadius: 10,
 //     elevation: 4,
@@ -127,22 +153,53 @@
 //     fontWeight: '600',
 //     color: '#000',
 //   },
+//   arrow: {
+//     fontSize: 20,
+//     color: '#000',
+//     marginLeft: 10,
+//   },
 // });
 
 // export default AttendanceManagement;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
+import AttendancebyClass from './AttendancebyClass';
+import FacultyAttendance from './FacultyAttendance';
 
-const AttendanceManagement = ({ onNavigate }) => {
+const AttendanceManagement = () => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
     { label: 'Computer Science', value: 'CSE' },
     { label: 'Electrical Engineering', value: 'EEE' },
-    { label: 'Mechanical Engineering', value: 'MEC' }
+    { label: 'Mechanical Engineering', value: 'MEC' },
   ]);
+
+  const [subView, setSubView] = useState('main'); 
+
+  if (subView === 'class') return <AttendancebyClass />;
+  if (subView === 'faculty') return <FacultyAttendance />;
 
   return (
     <View style={styles.container}>
@@ -162,7 +219,6 @@ const AttendanceManagement = ({ onNavigate }) => {
         />
       </View>
 
-      {/* Rest of the unchanged components */}
       <TouchableOpacity style={[styles.card, { backgroundColor: '#d6c3ff' }]}>
         <Text style={styles.label}>Total Present Today</Text>
         <Text style={styles.bigText}>955</Text>
@@ -184,7 +240,7 @@ const AttendanceManagement = ({ onNavigate }) => {
 
       <TouchableOpacity
         style={[styles.actionBtn, { backgroundColor: '#f5d5bc' }]}
-        onPress={() => onNavigate('classSection')}
+        onPress={() => setSubView('class')}
       >
         <Text style={styles.btnText}>View attendance by Class / Section</Text>
         <Text style={styles.arrow}>→</Text>
@@ -192,7 +248,7 @@ const AttendanceManagement = ({ onNavigate }) => {
 
       <TouchableOpacity
         style={[styles.actionBtn, { backgroundColor: '#e9f6bb' }]}
-        onPress={() => onNavigate('faculty')}
+        onPress={() => setSubView('faculty')}
       >
         <Text style={styles.btnText}>Faculty attendance & Leave Management</Text>
         <Text style={styles.arrow}>→</Text>
@@ -202,48 +258,26 @@ const AttendanceManagement = ({ onNavigate }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { 
-    padding: 20, 
-    // backgroundColor: '#fff',
-    flex: 1,
-  },
-  dropdownWrapper: {
-    marginBottom: 15,
-    zIndex: 1,
-  },
-  picker: {
-    borderColor: '#ccc',
-    borderRadius: 8,
-    height: 50,
-  },
-  dropdownContainer: {
-    borderColor: '#ccc',
-    borderRadius: 8,
-    marginTop: 2,
-  },
-  placeholder: {
-    color: '#666',
-    fontSize: 16,
-  },
-  listItem: {
-    height: 40,
-    justifyContent: 'center',
-  },
-  // Rest of the styles remain unchanged
-  label: { fontSize: 16, fontWeight: '500', color: '#000',textAlign:'center'  },
-  bigText: { fontSize: 36, fontWeight: 'bold', color: '#000' ,textAlign:'center', marginTop:20 },
+  container: { padding: 20, flex: 1 },
+  dropdownWrapper: { marginBottom: 15, zIndex: 1 },
+  picker: { borderColor: '#ccc', borderRadius: 8, height: 50 },
+  dropdownContainer: { borderColor: '#ccc', borderRadius: 8, marginTop: 2 },
+  placeholder: { color: '#666', fontSize: 16 },
+  listItem: { height: 40, justifyContent: 'center' },
+  label: { fontSize: 16, fontWeight: '500', color: '#000', textAlign: 'center' },
+  bigText: { fontSize: 36, fontWeight: 'bold', color: '#000', textAlign: 'center', marginTop: 20 },
   percent: { fontSize: 24, fontWeight: 'bold', color: '#000' },
   yearRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     gap: 10,
     marginVertical: 30,
-    height:90,
+    height: 90,
   },
   card: {
     padding: 20,
     width: 200,
-    height:150,
+    height: 150,
     marginVertical: 10,
     borderRadius: 10,
     elevation: 4,
@@ -276,16 +310,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 1, height: 1 },
     shadowRadius: 3,
   },
-  btnText: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#000',
-  },
-  arrow: {
-    fontSize: 20,
-    color: '#000',
-    marginLeft: 10,
-  },
+  btnText: { fontSize: 16, fontWeight: '600', color: '#000' },
+  arrow: { fontSize: 20, color: '#000', marginLeft: 10 },
 });
 
 export default AttendanceManagement;
