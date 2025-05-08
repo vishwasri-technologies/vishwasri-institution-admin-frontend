@@ -246,13 +246,13 @@ const AttendanceManagement = () => {
         <Text style={styles.arrow}>→</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={[styles.actionBtn, { backgroundColor: '#e9f6bb' }]}
         onPress={() => setSubView('faculty')}
       >
         <Text style={styles.btnText}>Faculty attendance & Leave Management</Text>
         <Text style={styles.arrow}>→</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 };

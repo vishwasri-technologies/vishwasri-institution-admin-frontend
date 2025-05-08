@@ -16,12 +16,56 @@ import {
 import {Flyout} from 'react-native-windows';
 
 const studentsData = [
-  {name: 'Allary Hitesh', roll: '214420862852', attendance: '85%'},
-  {name: 'Allu Lokesh', roll: '214420862658', attendance: '90%'},
-  {name: 'Chadla Rajesh', roll: '214420862150', attendance: '72%'},
-  {name: 'Dhis Suresh', roll: '214420862066', attendance: '77%'},
-  {name: 'Eddy Tanesh', roll: '214420862058', attendance: '88%'},
-  {name: 'Joss Umesh', roll: '214420862068', attendance: '95%'},
+  {name: 'Allary Hitesh', roll: '214420862852', attendance: '85%', 
+    attendanceRecords: [
+    { time: '9:10 - 10:10', status: 'Present' },
+    { time: '10:10 - 11:10', status: 'Absent' },
+    { time: '11:10 - 12:10', status: 'Present' },
+    { time: '12:10 - 01:10', status: 'Present' },
+    { time: '01:40 - 02:40', status: 'Absent' },
+    { time: '02:40 - 03:40', status: 'Absent' },
+  ]},
+
+  {name: 'Allu Lokesh', roll: '214420862658', attendance: '90%',attendanceRecords: [
+    { time: '9:10 - 10:10', status: 'Present' },
+    { time: '10:10 - 11:10', status: 'Absent' },
+    { time: '11:10 - 12:10', status: 'Present' },
+    { time: '12:10 - 01:10', status: 'Present' },
+    { time: '01:40 - 02:40', status: 'Absent' },
+    { time: '02:40 - 03:40', status: 'Absent' },
+  ]},
+  {name: 'Chadla Rajesh', roll: '214420862150', attendance: '72%',attendanceRecords: [
+    { time: '9:10 - 10:10', status: 'Present' },
+    { time: '10:10 - 11:10', status: 'Absent' },
+    { time: '11:10 - 12:10', status: 'Present' },
+    { time: '12:10 - 01:10', status: 'Present' },
+    { time: '01:40 - 02:40', status: 'Absent' },
+    { time: '02:40 - 03:40', status: 'Absent' },
+  ]},
+  {name: 'Dhis Suresh', roll: '214420862066', attendance: '77%',attendanceRecords: [
+    { time: '9:10 - 10:10', status: 'Present' },
+    { time: '10:10 - 11:10', status: 'Absent' },
+    { time: '11:10 - 12:10', status: 'Present' },
+    { time: '12:10 - 01:10', status: 'Present' },
+    { time: '01:40 - 02:40', status: 'Absent' },
+    { time: '02:40 - 03:40', status: 'Absent' },
+  ]},
+  {name: 'Eddy Tanesh', roll: '214420862058', attendance: '88%',attendanceRecords: [
+    { time: '9:10 - 10:10', status: 'Present' },
+    { time: '10:10 - 11:10', status: 'Absent' },
+    { time: '11:10 - 12:10', status: 'Present' },
+    { time: '12:10 - 01:10', status: 'Present' },
+    { time: '01:40 - 02:40', status: 'Absent' },
+    { time: '02:40 - 03:40', status: 'Absent' },
+  ]},
+  {name: 'Joss Umesh', roll: '214420862068', attendance: '95%',attendanceRecords: [
+    { time: '9:10 - 10:10', status: 'Present' },
+    { time: '10:10 - 11:10', status: 'Absent' },
+    { time: '11:10 - 12:10', status: 'Present' },
+    { time: '12:10 - 01:10', status: 'Present' },
+    { time: '01:40 - 02:40', status: 'Absent' },
+    { time: '02:40 - 03:40', status: 'Absent' },
+  ]},
 ];
 
 const months = [
@@ -697,3 +741,7 @@ const styles = StyleSheet.create({
 
 
 export default AttendancebyClass;
+
+
+
+

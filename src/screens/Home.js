@@ -10,6 +10,8 @@ import AcademicCalendar from './AcademicCalender';
 import AttendanceManagement from './AttendanceManagement';
 import AttendancebyClass from './AttendancebyClass';
 
+import ExamTimetable from './ExamsTimeTable';
+
 
 
 
@@ -29,9 +31,11 @@ const Home = () => {
         case 'Timetable Management':
           return <TimetableScreen/>;
         case 'Attendance Management':
-          return <AttendanceManagement/>
+          return <AttendanceManagement/>;
           case ' AttendancebyClass':
-            return < AttendancebyClass/>
+            return < AttendancebyClass/>;
+            case 'Exams & Results':
+              return < ExamTimetable/>;
       default:
         return <DashboardGrid onSelect={setActiveScreen} />;
     }
@@ -52,7 +56,7 @@ const Home = () => {
 const DashboardGrid = ({ onSelect }) => {
   const items = [
     'Student Management', 'Faculty Management', 'Academic Calender', 'Timetable Management',
-    'Attendance Management', 'Fee & Payments', 'Exam & Results',
+    'Attendance Management', 'Fee & Payments', 'Exams & Results',
     'Announcements', 'Feedback & Complaints',
   ];
 
