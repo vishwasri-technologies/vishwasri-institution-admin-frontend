@@ -64,8 +64,8 @@ const DashboardGrid = ({ onSelect }) => {
   ];
 
   const colors = [
-    '#ff9999', '#99ccff', '#99ff99', '#ffcc99', '#cc99ff',
-    '#ffff99', '#ffb3e6', '#c2f0c2', '#b3d1ff',
+    '#BD9EFF99', '#9EA2FFB2', '#F5C1C1', '#9ECBFF', '#9EEEFF',
+    '#C1F5E2', '#F5D4C1', '#EEF5C1', '#C8F5C1',
   ];
 
   return (

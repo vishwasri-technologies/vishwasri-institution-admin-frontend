@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react';
 import {
   View,
@@ -16,56 +17,84 @@ import {
 import {Flyout} from 'react-native-windows';
 
 const studentsData = [
-  {name: 'Allary Hitesh', roll: '214420862852', attendance: '85%', 
+  {
+    name: 'Allary Hitesh',
+    roll: '214420862852',
+    attendance: '85%',
     attendanceRecords: [
-    { time: '9:10 - 10:10', status: 'Present' },
-    { time: '10:10 - 11:10', status: 'Absent' },
-    { time: '11:10 - 12:10', status: 'Present' },
-    { time: '12:10 - 01:10', status: 'Present' },
-    { time: '01:40 - 02:40', status: 'Absent' },
-    { time: '02:40 - 03:40', status: 'Absent' },
-  ]},
-
-  {name: 'Allu Lokesh', roll: '214420862658', attendance: '90%',attendanceRecords: [
-    { time: '9:10 - 10:10', status: 'Present' },
-    { time: '10:10 - 11:10', status: 'Absent' },
-    { time: '11:10 - 12:10', status: 'Present' },
-    { time: '12:10 - 01:10', status: 'Present' },
-    { time: '01:40 - 02:40', status: 'Absent' },
-    { time: '02:40 - 03:40', status: 'Absent' },
-  ]},
-  {name: 'Chadla Rajesh', roll: '214420862150', attendance: '72%',attendanceRecords: [
-    { time: '9:10 - 10:10', status: 'Present' },
-    { time: '10:10 - 11:10', status: 'Absent' },
-    { time: '11:10 - 12:10', status: 'Present' },
-    { time: '12:10 - 01:10', status: 'Present' },
-    { time: '01:40 - 02:40', status: 'Absent' },
-    { time: '02:40 - 03:40', status: 'Absent' },
-  ]},
-  {name: 'Dhis Suresh', roll: '214420862066', attendance: '77%',attendanceRecords: [
-    { time: '9:10 - 10:10', status: 'Present' },
-    { time: '10:10 - 11:10', status: 'Absent' },
-    { time: '11:10 - 12:10', status: 'Present' },
-    { time: '12:10 - 01:10', status: 'Present' },
-    { time: '01:40 - 02:40', status: 'Absent' },
-    { time: '02:40 - 03:40', status: 'Absent' },
-  ]},
-  {name: 'Eddy Tanesh', roll: '214420862058', attendance: '88%',attendanceRecords: [
-    { time: '9:10 - 10:10', status: 'Present' },
-    { time: '10:10 - 11:10', status: 'Absent' },
-    { time: '11:10 - 12:10', status: 'Present' },
-    { time: '12:10 - 01:10', status: 'Present' },
-    { time: '01:40 - 02:40', status: 'Absent' },
-    { time: '02:40 - 03:40', status: 'Absent' },
-  ]},
-  {name: 'Joss Umesh', roll: '214420862068', attendance: '95%',attendanceRecords: [
-    { time: '9:10 - 10:10', status: 'Present' },
-    { time: '10:10 - 11:10', status: 'Absent' },
-    { time: '11:10 - 12:10', status: 'Present' },
-    { time: '12:10 - 01:10', status: 'Present' },
-    { time: '01:40 - 02:40', status: 'Absent' },
-    { time: '02:40 - 03:40', status: 'Absent' },
-  ]},
+      {time: '9:10 - 10:10', status: 'Present'},
+      {time: '10:10 - 11:10', status: 'Absent'},
+      {time: '11:10 - 12:10', status: 'Present'},
+      {time: '12:10 - 01:10', status: 'Present'},
+      {time: '01:40 - 02:40', status: 'Absent'},
+      {time: '02:40 - 03:40', status: 'Absent'},
+    ],
+  },
+  {
+    name: 'Allu Lokesh',
+    roll: '214420862658',
+    attendance: '90%',
+    attendanceRecords: [
+      {time: '9:10 - 10:10', status: 'Present'},
+      {time: '10:10 - 11:10', status: 'Absent'},
+      {time: '11:10 - 12:10', status: 'Present'},
+      {time: '12:10 - 01:10', status: 'Present'},
+      {time: '01:40 - 02:40', status: 'Absent'},
+      {time: '02:40 - 03:40', status: 'Absent'},
+    ],
+  },
+  {
+    name: 'Chadla Rajesh',
+    roll: '214420862150',
+    attendance: '72%',
+    attendanceRecords: [
+      {time: '9:10 - 10:10', status: 'Present'},
+      {time: '10:10 - 11:10', status: 'Absent'},
+      {time: '11:10 - 12:10', status: 'Present'},
+      {time: '12:10 - 01:10', status: 'Present'},
+      {time: '01:40 - 02:40', status: 'Absent'},
+      {time: '02:40 - 03:40', status: 'Absent'},
+    ],
+  },
+  {
+    name: 'Dhis Suresh',
+    roll: '214420862066',
+    attendance: '77%',
+    attendanceRecords: [
+      {time: '9:10 - 10:10', status: 'Present'},
+      {time: '10:10 - 11:10', status: 'Absent'},
+      {time: '11:10 - 12:10', status: 'Present'},
+      {time: '12:10 - 01:10', status: 'Present'},
+      {time: '01:40 - 02:40', status: 'Absent'},
+      {time: '02:40 - 03:40', status: 'Absent'},
+    ],
+  },
+  {
+    name: 'Eddy Tanesh',
+    roll: '214420862058',
+    attendance: '88%',
+    attendanceRecords: [
+      {time: '9:10 - 10:10', status: 'Present'},
+      {time: '10:10 - 11:10', status: 'Absent'},
+      {time: '11:10 - 12:10', status: 'Present'},
+      {time: '12:10 - 01:10', status: 'Present'},
+      {time: '01:40 - 02:40', status: 'Absent'},
+      {time: '02:40 - 03:40', status: 'Absent'},
+    ],
+  },
+  {
+    name: 'Joss Umesh',
+    roll: '214420862068',
+    attendance: '95%',
+    attendanceRecords: [
+      {time: '9:10 - 10:10', status: 'Present'},
+      {time: '10:10 - 11:10', status: 'Absent'},
+      {time: '11:10 - 12:10', status: 'Present'},
+      {time: '12:10 - 01:10', status: 'Present'},
+      {time: '01:40 - 02:40', status: 'Absent'},
+      {time: '02:40 - 03:40', status: 'Absent'},
+    ],
+  },
 ];
 
 const months = [
@@ -135,9 +164,8 @@ const AttendancebyClass = () => {
 
   // Edit functionality states
   const [students, setStudents] = useState(studentsData);
-  const [editing, setEditing] = useState(null);
-  const [editValue, setEditValue] = useState('');
-  const [isEditingMode, setIsEditingMode] = useState(false);
+  const [editingStudent, setEditingStudent] = useState(null);
+  const [isSaving, setIsSaving] = useState(false);
 
   const getDaysInMonth = (month, year) => {
     return new Date(year, month + 1, 0).getDate();
@@ -173,7 +201,6 @@ const AttendancebyClass = () => {
   const selectMonth = monthIndex => {
     setCurrentMonth(monthIndex);
     setShowMonthPicker(false);
-    // Update the selected date to the first day of the new month
     const newDate = new Date(
       currentYearView,
       monthIndex,
@@ -185,7 +212,6 @@ const AttendancebyClass = () => {
   const selectYear = year => {
     setCurrentYearView(year);
     setShowYearPicker(false);
-    // Update the selected date to the same day in the new year
     const newDate = new Date(year, currentMonth, selectedDate.getDate());
     setSelectedDate(newDate);
   };
@@ -220,29 +246,44 @@ const AttendancebyClass = () => {
 
     return days;
   };
+
+  const handleEdit = (student) => {
+    setEditingStudent({...student});
+  };
+
+  const handleStatusChange = (index, status) => {
+    const updatedRecords = [...editingStudent.attendanceRecords];
+    updatedRecords[index].status = status;
+    setEditingStudent({
+      ...editingStudent,
+      attendanceRecords: updatedRecords
+    });
+  };
+
+  const calculateAttendancePercentage = (records) => {
+    const presentCount = records.filter(r => r.status === 'Present').length;
+    return Math.round((presentCount / records.length) * 100);
+  };
+
   const handleSave = () => {
-    if (editing) {
-      const updatedStudents = [...students];
-      updatedStudents[editing.index][editing.field] = editValue;
-      setStudents(updatedStudents);
-    }
-    setEditing(null);
-    setEditValue('');
-    setIsEditingMode(false);
-  };
-
-  const handleCancelEdit = () => {
-    setEditing(null);
-    setEditValue('');
-    setIsEditingMode(false);
-  };
-
-  const toggleEditMode = () => {
-    if (isEditingMode) {
-      handleCancelEdit();
-    } else {
-      setIsEditingMode(true);
-    }
+    setIsSaving(true);
+    // Calculate new attendance percentage
+    const newPercentage = calculateAttendancePercentage(editingStudent.attendanceRecords);
+    
+    // Update the student data
+    const updatedStudents = students.map(student => {
+      if (student.roll === editingStudent.roll) {
+        return {
+          ...editingStudent,
+          attendance: `${newPercentage}%`
+        };
+      }
+      return student;
+    });
+    
+    setStudents(updatedStudents);
+    setEditingStudent(null);
+    setIsSaving(false);
   };
 
   const formatDisplayDate = () => {
@@ -255,14 +296,11 @@ const AttendancebyClass = () => {
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <Text style={styles.title}>View attendance by class/section</Text>
-        {isEditingMode && (
+        {editingStudent && (
           <TouchableOpacity onPress={handleSave} style={styles.saveButton}>
-            <Text style={styles.saveButtonText}>Save</Text>
-          </TouchableOpacity>
-        )}
-        {!isEditingMode && (
-          <TouchableOpacity onPress={toggleEditMode} style={styles.editButton}>
-            <Text style={styles.editButtonText}>Edit</Text>
+            <Text style={styles.saveButtonText}>
+              {isSaving ? 'Saving...' : 'Save'}
+            </Text>
           </TouchableOpacity>
         )}
       </View>
@@ -436,49 +474,70 @@ const AttendancebyClass = () => {
         </View>
       </Flyout>
 
-      <ScrollView vertical>
+      <ScrollView>
         <View>
           <View style={styles.rowHeader}>
             <Text style={styles.cell}>Name</Text>
             <Text style={styles.cell}>Roll Number</Text>
             <Text style={styles.cell}>Attendance</Text>
-            {isEditingMode && <Text style={styles.cell}>Actions</Text>}
+            <Text style={styles.cell}>Actions</Text>
           </View>
+          
           {students.map((student, idx) => (
-            <View style={styles.row} key={idx}>
-              <Text style={styles.cell}>{student.name}</Text>
-              <Text style={styles.cell}>{student.roll}</Text>
-              {editing?.index === idx && editing?.field === 'attendance' ? (
-                <TextInput
-                  style={[
-                    styles.editInput,
-                    {color: parseInt(editValue) < 75 ? 'red' : 'green'},
-                  ]}
-                  value={editValue}
-                  onChangeText={setEditValue}
-                  keyboardType="numeric"
-                  autoFocus
-                />
-              ) : (
-                <Text
+            <View key={idx}>
+              <View style={styles.row}>
+                <Text style={styles.cell}>{student.name}</Text>
+                <Text style={styles.cell}>{student.roll}</Text>
+                <Text 
                   style={[
                     styles.cell,
-                    {
-                      color:
-                        parseInt(student.attendance) < 75 ? 'red' : 'green',
-                    },
-                  ]}>
+                    {color: parseInt(student.attendance) < 75 ? 'red' : 'green'}
+                  ]}
+                >
                   {student.attendance}
                 </Text>
-              )}
-              {isEditingMode && (
-                <TouchableOpacity style={styles.editButtonSmall}>
+                <TouchableOpacity 
+                  style={styles.editButtonSmall}
+                  onPress={() => handleEdit(student)}
+                >
                   <Text style={styles.editButtonTextSmall}>
-                    {editing?.index === idx && editing?.field === 'attendance'
-                      ? 'Save'
-                      : 'Edit'}
+                    Edit
                   </Text>
                 </TouchableOpacity>
+              </View>
+              
+              {editingStudent && editingStudent.roll === student.roll && (
+                <View style={styles.editContainer}>
+                  <ScrollView horizontal>
+                    <View style={styles.timeSlotsContainer}>
+                      <View style={styles.timeSlotRow}>
+                        {editingStudent.attendanceRecords.map((record, index) => (
+                          <Text key={`time-${index}`} style={styles.timeSlot}>
+                            {record.time}
+                          </Text>
+                        ))}
+                      </View>
+                      <View style={styles.statusRow}>
+                        {editingStudent.attendanceRecords.map((record, index) => (
+                          <TouchableOpacity
+                            key={`status-${index}`}
+                            style={[
+                              styles.statusButton,
+                              record.status === 'Present' ? styles.presentButton : styles.absentButton
+                            ]}
+                            onPress={() => handleStatusChange(index, 
+                              record.status === 'Present' ? 'Absent' : 'Present'
+                            )}
+                          >
+                            <Text style={styles.statusButtonText}>
+                              {record.status}
+                            </Text>
+                          </TouchableOpacity>
+                        ))}
+                      </View>
+                    </View>
+                  </ScrollView>
+                </View>
               )}
             </View>
           ))}
@@ -530,12 +589,46 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 12,
   },
-  editInput: {
-    width: 350,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 5,
+  editContainer: {
+    backgroundColor: '#f9f9f9',
+    padding: 10,
+    borderBottomWidth: 1,
+    borderColor: '#ddd',
+  },
+  timeSlotsContainer: {
+    flexDirection: 'column',
+    paddingVertical: 5,
+  },
+  timeSlotRow: {
+    flexDirection: 'row',
+    marginBottom: 10,
+  },
+  timeSlot: {
+    width: 120,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: '#333',
+    marginRight: 10,
+  },
+  statusRow: {
+    flexDirection: 'row',
+  },
+  statusButton: {
+    padding: 8,
     borderRadius: 5,
+    width: 120,
+    alignItems: 'center',
+    marginRight: 10,
+  },
+  presentButton: {
+    backgroundColor: '#4CAF50',
+  },
+  absentButton: {
+    backgroundColor: '#F44336',
+  },
+  statusButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
   },
   filters: {
     flexDirection: 'row',
@@ -635,49 +728,48 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
-   
   },
   calendarHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 15,
-    alignSelf:'center',
+    alignSelf: 'center',
   },
   calendarNavButton: {
     fontSize: 20,
     fontWeight: 'bold',
     paddingHorizontal: 5,
     color: 'black',
-    alignSelf:'center',
+    alignSelf: 'center',
   },
   calendarTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     color: 'black',
     paddingHorizontal: 10,
-    alignSelf:'center',
+    alignSelf: 'center',
   },
   calendarWeekDays: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginBottom: 10,
     color: 'black',
-    alignSelf:'center',
+    alignSelf: 'center',
   },
   calendarWeekDayText: {
     width: 40,
     textAlign: 'center',
     fontWeight: 'bold',
     color: 'black',
-    alignSelf:'center',
+    alignSelf: 'center',
   },
   calendarDays: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
     color: 'black',
-    alignSelf:'center',
+    alignSelf: 'center',
   },
   calendarDayCell: {
     width: 40,
@@ -739,8 +831,4 @@ const styles = StyleSheet.create({
   },
 });
 
-
 export default AttendancebyClass;
-
-
-
