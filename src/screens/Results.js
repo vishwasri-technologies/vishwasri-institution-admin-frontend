@@ -1,3 +1,4 @@
+
 import React, {useState, useEffect} from 'react';
 import {
   View,
@@ -17,7 +18,11 @@ const initialStudents = [
     name: 'Allary Hitesh',
     roll: '214420862852',
     CGPA: '70%',
-    subjects: [],
+    subjects: [
+      {subject: 'Mathematics', mark: '85'},
+      {subject: 'Physics', mark: '78'},
+      {subject: 'Chemistry', mark: '72'},
+    ],
     showEditor: false,
     newSubject: '',
     newMark: '',
@@ -26,7 +31,11 @@ const initialStudents = [
     name: 'Allu Lokesh',
     roll: '214420862658',
     CGPA: '30%',
-    subjects: [],
+    subjects: [
+      {subject: 'Mathematics', mark: '35'},
+      {subject: 'Physics', mark: '28'},
+      {subject: 'Chemistry', mark: '32'},
+    ],
     showEditor: false,
     newSubject: '',
     newMark: '',
@@ -35,7 +44,11 @@ const initialStudents = [
     name: 'Chadla Rajesh',
     roll: '214420862150',
     CGPA: '60%',
-    subjects: [],
+    subjects: [
+      {subject: 'Mathematics', mark: '65'},
+      {subject: 'Physics', mark: '58'},
+      {subject: 'Chemistry', mark: '62'},
+    ],
     showEditor: false,
     newSubject: '',
     newMark: '',
@@ -44,7 +57,11 @@ const initialStudents = [
     name: 'Dhis Suresh',
     roll: '214420862066',
     CGPA: '32%',
-    subjects: [],
+    subjects: [
+      {subject: 'Mathematics', mark: '38'},
+      {subject: 'Physics', mark: '30'},
+      {subject: 'Chemistry', mark: '35'},
+    ],
     showEditor: false,
     newSubject: '',
     newMark: '',
@@ -53,7 +70,11 @@ const initialStudents = [
     name: 'Eddy Tanesh',
     roll: '214420862058',
     CGPA: '71%',
-    subjects: [],
+    subjects: [
+      {subject: 'Mathematics', mark: '80'},
+      {subject: 'Physics', mark: '75'},
+      {subject: 'Chemistry', mark: '68'},
+    ],
     showEditor: false,
     newSubject: '',
     newMark: '',
@@ -62,7 +83,11 @@ const initialStudents = [
     name: 'Joss Umesh',
     roll: '214420862068',
     CGPA: '50%',
-    subjects: [],
+    subjects: [
+      {subject: 'Mathematics', mark: '55'},
+      {subject: 'Physics', mark: '48'},
+      {subject: 'Chemistry', mark: '52'},
+    ],
     showEditor: false,
     newSubject: '',
     newMark: '',
@@ -164,12 +189,6 @@ const ResultsScreen = () => {
         i === index ? {...student, [field]: value} : student,
       ),
     );
-  };
-  const calculateSubjectWidth = subjectName => {
-    const baseWidth = 100; // Minimum width
-    const charWidth = 8; // Approximate width per character
-    const padding = 40; // Additional padding for delete button
-    return Math.max(baseWidth, subjectName.length * charWidth + padding);
   };
 
   const addSubjectMark = index => {
@@ -341,79 +360,54 @@ const ResultsScreen = () => {
                 <View style={styles.subjectContainer}>
                   <Text style={styles.subjectTitle}>Subjects & Marks</Text>
 
-                  {student.subjects.length > 0 ? (
-                    <View>
-                      {/* Subjects Row - Horizontal ScrollView */}
-                      <ScrollView
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                        contentContainerStyle={styles.subjectsRow}>
-                        {student.subjects.map((s, subIdx) => (
-                          <View
-                            key={`subject-${subIdx}`}
-                            style={styles.subjectColumn}>
-                            <View style={styles.subjectItemContainer}>
-                              <Text
-                                style={styles.subjectName}
-                                numberOfLines={1}
-                                ellipsizeMode="tail">
-                                {s.subject}
-                              </Text>
-                              <TouchableOpacity
-                                style={styles.deleteButton}
-                                onPress={() => deleteSubject(idx, subIdx)}>
-                                <Text style={styles.deleteButtonText}>×</Text>
-                              </TouchableOpacity>
-                            </View>
-
-                            {/* Mark directly below subject in same column */}
-                            <View style={styles.markContainer}>
-                              <TextInput
-                                value={s.mark}
-                                onChangeText={text =>
-                                  handleEditMark(idx, subIdx, text)
-                                }
-                                style={styles.markInput}
-                                keyboardType="numeric"
-                              />
-                            </View>
-                          </View>
-                        ))}
-                      </ScrollView>
-
-                      {/* Add New Subject Inputs */}
-                      <View style={styles.addSubjectContainer}>
+                  <ScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={styles.subjectsRow}>
+                    {student.subjects.map((s, subIdx) => (
+                      <View key={`subject-${subIdx}`} style={styles.subjectColumn}>
+                        <View style={styles.subjectItemContainer}>
+                          <Text style={styles.subjectName} numberOfLines={1}>
+                            {s.subject}
+                          </Text>
+                          <TouchableOpacity
+                            style={styles.deleteButton}
+                            onPress={() => deleteSubject(idx, subIdx)}>
+                            <Text style={styles.deleteButtonText}>×</Text>
+                          </TouchableOpacity>
+                        </View>
                         <TextInput
-                          placeholder="Subject Name"
-                          placeholderTextColor="#666"
-                          value={student.newSubject}
-                          onChangeText={text =>
-                            handleInputChange(idx, 'newSubject', text)
-                          }
-                          style={styles.subjectInput}
-                        />
-                        <TextInput
-                          placeholder="Marks"
-                          placeholderTextColor="#666"
-                          value={student.newMark}
-                          onChangeText={text =>
-                            handleInputChange(idx, 'newMark', text)
-                          }
+                          value={s.mark}
+                          onChangeText={text => handleEditMark(idx, subIdx, text)}
+                          style={styles.markInput}
                           keyboardType="numeric"
-                          style={styles.markInputAdd}
                         />
-                        <TouchableOpacity
-                          style={styles.addButton}
-                          onPress={() => addSubjectMark(idx)}>
-                          <Text style={styles.addButtonText}>Add</Text>
-                        </TouchableOpacity>
                       </View>
-                    </View>
-                  ) : (
-                    <Text style={styles.noSubjectsText}>
-                      No subjects added yet
-                    </Text>
-                  )}
+                    ))}
+                  </ScrollView>
+
+                  <View style={styles.addSubjectContainer}>
+                    <TextInput
+                      placeholder="Subject Name"
+                      placeholderTextColor="#666"
+                      value={student.newSubject}
+                      onChangeText={text => handleInputChange(idx, 'newSubject', text)}
+                      style={styles.subjectInput}
+                    />
+                    <TextInput
+                      placeholder="Marks"
+                      placeholderTextColor="#666"
+                      value={student.newMark}
+                      onChangeText={text => handleInputChange(idx, 'newMark', text)}
+                      keyboardType="numeric"
+                      style={styles.markInputAdd}
+                    />
+                    <TouchableOpacity
+                      style={styles.addButton}
+                      onPress={() => addSubjectMark(idx)}>
+                      <Text style={styles.addButtonText}>Add</Text>
+                    </TouchableOpacity>
+                  </View>
                 </View>
               )}
             </View>
@@ -531,6 +525,37 @@ const styles = StyleSheet.create({
     color: '#444',
     marginBottom: 10,
   },
+  subjectsRow: {
+    flexDirection: 'row',
+    paddingBottom: 10,
+  },
+  subjectColumn: {
+    marginRight: 15,
+    minWidth: 100,
+    alignItems: 'flex-start',
+  },
+  subjectItemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#e6e6fa',
+    padding: 8,
+    borderRadius: 4,
+    marginBottom: 5,
+  },
+  subjectName: {
+    flex: 1,
+    color: '#333',
+    marginRight: 5,
+  },
+  markInput: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 4,
+    padding: 8,
+    backgroundColor: '#fff',
+    color: '#333',
+    width: 100,
+  },
   subjectInput: {
     width: 150,
     borderWidth: 1,
@@ -552,53 +577,11 @@ const styles = StyleSheet.create({
     color: '#333',
     textAlign: 'center',
   },
-
-  subjectsRow: {
-    flexDirection: 'row',
-    paddingBottom: 10,
-  },
-  subjectColumn: {
-    marginRight: 15,
-    minWidth: 100,
-    alignItems: 'flex-start',
-  },
-  subjectItemContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#e6e6fa',
-    padding: 8,
-    borderRadius: 4,
-    marginBottom: 5,
-  },
-  markContainer: {
-    alignItems: 'center',
-  },
-  subjectName: {
-    flex: 1,
-    color: '#333',
-    marginRight: 5,
-  },
-  markInput: {
-    borderBottomWidth: 1,
-    borderColor: '#ccc',
-    paddingVertical: 4,
-    paddingHorizontal: 8,
-    color: '#333',
-    backgroundColor: '#fff',
-    width: 60,
-    alignSelf: 'flex-start',
-  },
-  noSubjectsText: {
-    color: '#888',
-    fontStyle: 'italic',
-    marginBottom: 15,
-  },
   addSubjectContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 10,
   },
-
   addButton: {
     backgroundColor: '#1e90ff',
     paddingVertical: 8,
