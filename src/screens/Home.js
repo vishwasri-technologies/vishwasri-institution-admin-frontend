@@ -11,6 +11,7 @@ import AttendanceManagement from './AttendanceManagement';
 import AttendancebyClass from './AttendancebyClass';
 
 import ExamTimetable from './ExamsTimeTable';
+import FeePayments from './FeePayments';
 
 
 
@@ -36,6 +37,8 @@ const Home = () => {
             return < AttendancebyClass/>;
             case 'Exams & Results':
               return < ExamTimetable/>;
+            case 'Fee & Payments':
+              return <FeePayments/>;
       default:
         return <DashboardGrid onSelect={setActiveScreen} />;
     }
