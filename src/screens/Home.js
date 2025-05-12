@@ -12,6 +12,8 @@ import AttendancebyClass from './AttendancebyClass';
 
 import ExamTimetable from './ExamsTimeTable';
 import FeePayments from './FeePayments';
+import Feedback from './Feedback';
+import AnnouncementForm from './Announcements';
 
 
 
@@ -39,6 +41,10 @@ const Home = () => {
               return < ExamTimetable/>;
             case 'Fee & Payments':
               return <FeePayments/>;
+               case 'Feedback & Complaints':
+              return <Feedback/>;
+                case 'Announcements':
+              return <AnnouncementForm/>;
       default:
         return <DashboardGrid onSelect={setActiveScreen} />;
     }
