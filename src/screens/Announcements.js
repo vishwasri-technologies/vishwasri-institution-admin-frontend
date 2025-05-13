@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -10,15 +9,12 @@ import {
   Image,
 } from 'react-native';
 
-
 const AnnouncementForm = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [poster, setPoster] = useState(null);
 
-  const handleUploadPoster = () => {
-   
-  };
+  const handleUploadPoster = () => {};
 
   return (
     <View style={styles.wrapper}>
@@ -40,7 +36,7 @@ const AnnouncementForm = () => {
           value={description}
           onChangeText={setDescription}
           placeholder="Enter description"
-           placeholderTextColor="gray"
+          placeholderTextColor="gray"
           multiline
         />
 
@@ -48,8 +44,8 @@ const AnnouncementForm = () => {
         <TouchableOpacity style={styles.posterBox} onPress={handleUploadPoster}>
           {poster ? (
             <Image
-              source={{ uri: poster.uri }}
-              style={{ width: '100%', height: '100%' }}
+              source={{uri: poster.uri}}
+              style={{width: '100%', height: '100%'}}
               resizeMode="contain"
             />
           ) : (
@@ -65,7 +61,7 @@ const AnnouncementForm = () => {
   );
 };
 
-const { width } = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 const containerWidth = width > 600 ? 400 : '90%';
 
 const styles = StyleSheet.create({
@@ -76,6 +72,7 @@ const styles = StyleSheet.create({
   },
   container: {
     width: containerWidth,
+    marginLeft:40,
   },
   heading: {
     fontSize: 22,
@@ -86,7 +83,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     marginBottom: 4,
-    color:'black',
+    color: 'black',
   },
   input: {
     height: 49,
@@ -97,7 +94,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     backgroundColor: 'transparent',
     color: 'black',
-    paddingTop:10,
+    paddingTop: 10,
   },
   textArea: {
     height: 80,
@@ -109,7 +106,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f3f3f3',
     marginBottom: 12,
     color: 'black',
-    paddingTop:10,
+    paddingTop: 10,
   },
   posterBox: {
     height: 250,
