@@ -42,7 +42,7 @@ const ForgotPassword = ({ navigation }) => {
           secureTextEntry
         />
 
-        <TouchableOpacity style={styles.button} >
+        <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Login')}  >
           <Text style={styles.buttonText}>Save Password</Text>
         </TouchableOpacity>
       </View>

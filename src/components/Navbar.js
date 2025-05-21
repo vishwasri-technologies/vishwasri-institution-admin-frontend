@@ -14,12 +14,11 @@ const Navbar = () => (
 
 const styles = StyleSheet.create({
   navbar: {
-    height: 60,
+    height: 100,
     backgroundColor: '#fff',
     justifyContent: 'center',
     paddingHorizontal: 20,
     elevation: 4,
-    // color:'black',
   },
   logo: {
    height:190,
