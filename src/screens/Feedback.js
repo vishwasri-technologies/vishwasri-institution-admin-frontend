@@ -90,11 +90,11 @@ export default function Feedback() {
     <View style={styles.rowContainer}>
       <View style={styles.row}>
         <Text style={styles.cell}>{item.name}</Text>
-        <Text style={styles.cell}>{item.id}</Text>
+        {/* <Text style={styles.cell}>{item.id}</Text> */}
         <View style={styles.cell}>
-          <Text style={styles.complaintText}>{item.complaints}</Text>
-          <TouchableOpacity 
-            style={styles.button} 
+          <Text style={styles.complaintText}>  {item.complaints}</Text>
+          <TouchableOpacity
+            style={styles.button}
             onPress={() => handleView(item.id)}
           >
             <Text style={styles.buttonText}>
@@ -147,7 +147,7 @@ export default function Feedback() {
 
       <View style={styles.header}>
         <Text style={styles.headerCell}>Name</Text>
-        <Text style={styles.headerCell}>ID</Text>
+        {/* <Text style={styles.headerCell}>ID</Text> */}
         <Text style={styles.headerCell}>Complaints</Text>
         <Text style={styles.headerCell}>Feedback</Text>
       </View>

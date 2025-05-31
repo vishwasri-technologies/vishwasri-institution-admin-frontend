@@ -21,7 +21,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Signup">
         <Stack.Screen name="Signup" component={SignupScreen} options={{ headerShown: false }}  />
         <Stack.Screen name="Login" component={LoginScreen}  options={{ headerShown: false }} />
-        <Stack.Screen name="Forgot" component={ForgotPassword} options={{ headerShown: false }} />
+        <Stack.Screen name="Forgot" component={ForgotPassword}  />
         <Stack.Screen name="Home" component={Home}  options={{ headerShown: false }} />
         <Stack.Screen name="AcademicCalender" component={AcademicCalender} />
         <Stack.Screen name="TimetableScreen" component={TimetableScreen} />

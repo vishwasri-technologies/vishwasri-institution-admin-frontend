@@ -168,17 +168,29 @@ const TimetableScreen = () => {
       {/* Tabs */}
       <View style={styles.tabs}>
         <TouchableOpacity
-          style={[styles.tab, activeTab === 'Student Timetable' && styles.activeTab]}
-          onPress={() => setActiveTab('Student Timetable')}
-        >
-          <Text style={styles.tabText}>Student Timetable</Text>
-        </TouchableOpacity>
+  style={[styles.tab, activeTab === 'Student Timetable' && styles.activeTab]}
+  onPress={() => setActiveTab('Student Timetable')}
+>
+  <Text style={[
+    styles.tabText,
+    activeTab === 'Student Timetable' && styles.activeTabText
+  ]}>
+    Student Timetable
+  </Text>
+</TouchableOpacity>
+
         <TouchableOpacity
-          style={[styles.tab, activeTab === 'Faculty Timetable' && styles.activeTab]}
-          onPress={() => setActiveTab('Faculty Timetable')}
-        >
-          <Text style={styles.tabText}>Faculty Timetable</Text>
-        </TouchableOpacity>
+  style={[styles.tab, activeTab === 'Faculty Timetable' && styles.activeTab]}
+  onPress={() => setActiveTab('Faculty Timetable')}
+>
+  <Text style={[
+    styles.tabText,
+    activeTab === 'Faculty Timetable' && styles.activeTabText
+  ]}>
+    Faculty Timetable
+  </Text>
+</TouchableOpacity>
+
       </View>
 
       {/* Dropdowns - Conditionally render based on active tab */}
@@ -342,12 +354,10 @@ const TimetableScreen = () => {
   );
 };
 
-// Keep the same styles as before
 const styles = StyleSheet.create({
   container: { 
     flex: 1,
     padding: 10,
-    // backgroundColor: '#fff',
   },
   scrollContainer: {
     flex: 1,
@@ -370,6 +380,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '500',
   },
+  activeTabText:{color:'white'},
+
   filters: {
     flexDirection: 'row',
     flexWrap: 'wrap',

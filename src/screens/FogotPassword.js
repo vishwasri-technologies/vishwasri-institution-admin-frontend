@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState }  from 'react';
 import {
   View,
   Text,
@@ -8,9 +8,65 @@ import {
   TouchableOpacity,
   Image,
   Dimensions,
+  Alert,
 } from 'react-native';
 
 const ForgotPassword = ({ navigation }) => {
+ const [email, setEmail] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const validateEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+  const handleSavePassword = async () => {
+     const trimmedEmail = email.trim();
+    const trimmedNewPassword = newPassword.trim();
+    const trimmedConfirmPassword = confirmPassword.trim();
+
+    console.log({ trimmedEmail, trimmedNewPassword, trimmedConfirmPassword }); // Debug - remove later
+
+    if (!trimmedEmail || !trimmedNewPassword || !trimmedConfirmPassword) {
+      return Alert.alert('Error', 'All fields are required');
+    }
+
+    if (!validateEmail(trimmedEmail)) {
+      return Alert.alert('Error', 'Please enter a valid email');
+    }
+
+    if (trimmedNewPassword.length < 6) {
+      return Alert.alert('Error', 'Password must be at least 6 characters');
+    }
+
+    if (trimmedNewPassword !== trimmedConfirmPassword) {
+      return Alert.alert('Error', 'Passwords do not match');
+    }
+
+    try {
+      const response = await fetch('http://192.168.29.58:5000/api/auth/reset-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          email: trimmedEmail,
+          newPassword: trimmedNewPassword,
+          confirmPassword: trimmedConfirmPassword,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Password reset failed');
+      }
+
+       Alert.alert('Success', data.message, [
+        { text: 'OK', onPress: () => navigation.navigate('Login') },
+      ]);
+    } catch (error) {
+      console.error(error);
+      Alert.alert('Error', error.message);
+    }
+  };
+
   return (
     <View style={styles.mm}>
     <View style={styles.container}>
@@ -26,25 +82,33 @@ const ForgotPassword = ({ navigation }) => {
 
 
         <Text style={styles.label}>Email</Text>
-        <TextInput style={styles.input} placeholder="Enter your Email"  placeholderTextColor="#000" />
+        <TextInput style={styles.input} placeholder="Enter your Email" 
+         placeholderTextColor="#000" 
+         value={email}
+         onChangeText={setEmail}
+         autoCapitalize="none"
+          keyboardType="email-address"
+         />
 
         <Text style={styles.label}>New Password</Text>
         <TextInput
           style={styles.input}
           placeholder="Enter your New Password"  placeholderTextColor="#000"
-          secureTextEntry
+          secureTextEntry value={newPassword}
+          onChangeText={setNewPassword}
         />
 
         <Text style={styles.label}>Confirm Password</Text>
         <TextInput
           style={styles.input}
           placeholder="Enter your Confirm Password"  placeholderTextColor="#000"
-          secureTextEntry
+          secureTextEntry value={confirmPassword}
+          onChangeText={setConfirmPassword}
         />
 
-        <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Login')}  >
-          <Text style={styles.buttonText}>Save Password</Text>
-        </TouchableOpacity>
+         <TouchableOpacity style={styles.button} onPress={handleSavePassword}>
+            <Text style={styles.buttonText}>Save Password</Text>
+          </TouchableOpacity>
       </View>
     </View>
     </View>

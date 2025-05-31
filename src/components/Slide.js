@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 
 const sections = [
+  'Home',
   'Student Management',
   'Faculty Management',
   'Academic Calender',
@@ -40,12 +41,10 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ccc',
     paddingHorizontal: 10,
   },
-  
   selectedLink: {
     backgroundColor: '#91bcc4',
     width: '100%',
   },
-  
 });
 
 export default Sidebar;

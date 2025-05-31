@@ -19,24 +19,37 @@ const ExamTimetable = () => {
     { label: 'Electrical', value: 'eee' },
     { label: 'Mechanical', value: 'mech' },
   ]);
+   const [yearOpen, setYearOpen] = useState(false);
+  const [yearValue, setYearValue] = useState(null);
+  const [yearItems, setYearItems] = useState([
+    { label: '1st', value: '1st' },
+    { label: '2nd', value: '2nd' },
+    { label: '3rd', value: '3rd' },
+     { label: '4th', value: '4th' },
+  ]);
 
   return (
     <View style={{ flex: 1 }}>
       {/* Tab Navigation */}
       <View style={styles.tabContainer}>
         <TouchableOpacity
-          style={[styles.tabButton, activeTab === 'Exams' && styles.activeTab]}
-          onPress={() => setActiveTab('Exams')}
-        >
-          <Text style={styles.tabText}>Exams</Text>
-        </TouchableOpacity>
+  style={[styles.tabButton, activeTab === 'Exams' && styles.activeTab]}
+  onPress={() => setActiveTab('Exams')}
+>
+  <Text style={[styles.tabText, activeTab === 'Exams' && styles.activeTabText]}>
+    Exams
+  </Text>
+</TouchableOpacity>
 
-        <TouchableOpacity
-          style={[styles.tabButton, activeTab === 'Results' && styles.activeTab]}
-          onPress={() => setActiveTab('Results')}
-        >
-          <Text style={styles.tabText}>Results</Text>
-        </TouchableOpacity>
+<TouchableOpacity
+  style={[styles.tabButton, activeTab === 'Results' && styles.activeTab]}
+  onPress={() => setActiveTab('Results')}
+>
+  <Text style={[styles.tabText, activeTab === 'Results' && styles.activeTabText]}>
+    Results
+  </Text>
+</TouchableOpacity>
+
       </View>
 
       {/* Tab Content */}
@@ -68,6 +81,19 @@ const ExamTimetable = () => {
                 setValue={setDeptValue}
                 setItems={setDeptItems}
                 placeholder="Select Department"
+                style={styles.dropdown}
+                dropDownContainerStyle={styles.dropdownBox}
+              />
+            </View>
+             <View style={styles.dropdownWrapper}>
+              <DropDownPicker
+                open={yearOpen}
+                value={yearValue}
+                items={yearItems}
+                setOpen={setYearOpen}
+                setValue={setYearValue}
+                setItems={setYearItems}
+                placeholder="Select Year"
                 style={styles.dropdown}
                 dropDownContainerStyle={styles.dropdownBox}
               />
@@ -113,10 +139,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#1b7b89',
     borderColor: '#fff',
   },
-  tabText: {
+    tabText: {
     color: 'black',
-    fontSize: 16,
+    textAlign: 'center',
+    fontWeight: '500',
   },
+  activeTabText: {
+    color: 'white',
+  },
+
   container: {
     padding: 16,
   },
@@ -127,31 +158,35 @@ const styles = StyleSheet.create({
     color:'black',
   },
   dropdownContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 16,
-    zIndex: 1000,
-  },
-  dropdownWrapper: {
-    flex: 1,
-    marginRight: 10,
-    zIndex: 1000,
-  },
-  dropdown: {
-    backgroundColor: '#f0f0f0',
-    borderColor: '#999',
-  },
-  dropdownBox: {
-    backgroundColor: '#e6e6e6',
-  },
+  flexDirection: 'row',
+  flexWrap: 'wrap', 
+  gap: 0, 
+  marginBottom: 16,
+  zIndex: 1000,
+},
+dropdownWrapper: {
+  marginRight: 8,
+},
+dropdown: {
+  backgroundColor: '#f0f0f0',
+  borderColor: '#999',
+  width: 180,
+},
+dropdownBox: {
+  backgroundColor: '#e6e6e6',
+  width: 180,
+},
+
   label: {
     fontSize: 16,
     marginBottom: 4,
     marginLeft: 6,
     color:'black',
+    width:200,
   },
   input: {
     height: 40,
+    width:300,
     borderWidth: 1,
     borderColor: '#999',
     borderRadius: 6,
@@ -163,7 +198,7 @@ const styles = StyleSheet.create({
   },
   uploadBox: {
     height: 300,
-    // width:300,
+    width:300,
 
     borderWidth: 1,
     borderStyle: 'dashed',
@@ -182,7 +217,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     alignItems: 'center',
     width:300,
-    alignSelf:'center',
+    alignSelf:'flex-start',
   },
   uploadButtonText: {
     color: 'white',

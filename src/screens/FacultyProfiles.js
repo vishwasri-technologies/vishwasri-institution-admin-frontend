@@ -31,6 +31,7 @@ export default function FacultyProfiles() {
   const [search, setSearch] = useState('');
   const [activeTab, setActiveTab] = useState('faculty');
    const [editingFaculty, setEditingFaculty] = useState(null);
+   const [editingImage, setEditingImage] = useState(false);
     const [facultyForm, setFacultyForm] = useState({
       name: 'Allary Hitesh',
     id: '214420862852',
@@ -48,6 +49,7 @@ export default function FacultyProfiles() {
     postgraduation: 'M.com in computer application',
     doctorate: 'Information Systems-NTT Trichy 2014',
     certifications: 'AWS certified Educator',
+      profileImage: 'https://randomuser.me/api/portraits/men/75.jpg'
   });
 
   const filteredFaculty = facultyData.filter(faculty =>
@@ -55,6 +57,10 @@ export default function FacultyProfiles() {
   );
    const handleSaveEdit = () => {
     setEditingFaculty(null);
+      setEditingImage(false);
+  };
+   const handleImageEdit = () => {
+    setEditingImage(!editingImage);
   };
 
  const renderItem = ({ item }) => (
@@ -80,25 +86,35 @@ export default function FacultyProfiles() {
   );
   
     const renderEditForm = () => (
-      <ScrollView contentContainerStyle={styles.editContainer} showsVerticalScrollIndicator={false}>
-        <View style={styles.profileHeader}>
-          <Image
-            source={{ uri: 'https://randomuser.me/api/portraits/men/75.jpg' }}
-            style={styles.profileImage}
-          />
-          <View>
-            <Text style={styles.profileName}>{facultyForm.name}</Text>
-            <Text style={styles.profileId}>{facultyForm.id}</Text>
+     <ScrollView contentContainerStyle={styles.editContainer} showsVerticalScrollIndicator={false}>
+          <View style={styles.profileHeaderRow}>
+            <View style={styles.profileHeader}>
+              <View style={styles.imageContainer}>
+                <Image
+                  source={{ uri: facultyForm.profileImage }}
+                  style={styles.profileImage}
+                />
+                <TouchableOpacity style={styles.editImageButton} onPress={handleImageEdit}>
+                  <Image
+                    source={require('../assets/note-pencil.png')}
+                    style={styles.editIcon}
+                  />
+                </TouchableOpacity>
+              </View>
+              <View>
+                <Text style={styles.profileName}>{facultyForm.name}</Text>
+                <Text style={styles.profileId}>{facultyForm.id}</Text>
+              </View>
+            </View>
+            <View style={styles.editButtonsContainer}>
+              <TouchableOpacity style={[styles.editButton, styles.cancelButton]} onPress={() => setEditingFaculty(null)}>
+                <Text style={styles.blackText}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.editButton, styles.saveEditButton]} onPress={handleSaveEdit}>
+                <Text style={styles.whiteText}>Save</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-          <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 20 }}>
-            <TouchableOpacity style={[styles.editButton, styles.cancelButton]} onPress={() => setEditingFaculty(null)}>
-              <Text style={styles.blackText}>Cancel</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.editButton, styles.saveEditButton]} onPress={handleSaveEdit}>
-              <Text style={styles.whiteText}>Save</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
   
         <Text style={styles.sectionTitle}>Professional Details</Text>
         <View style={styles.rowField}>
@@ -251,140 +267,54 @@ return (
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 16,
-    flex: 1,
-  },
-  tabContainer: {
-    flexDirection: 'row',
-    marginBottom: 16,
-  },
-  activeTab: {
-    backgroundColor: '#007d8f',
-    padding: 12,
-    borderTopLeftRadius: 12,
-    borderTopRightRadius: 12,
-    flex: 1,
-    alignItems: 'center',
-  },
-  inactiveTab: {
-    backgroundColor: '#f0f0f0',
-    padding: 12,
-    borderTopLeftRadius: 12,
-    borderTopRightRadius: 12,
-    flex: 1,
-    alignItems: 'center',
-  },
-  activeTabText: {
-    fontWeight: '600',
-    color: 'white',
-  },
-  tabText: {
-    fontWeight: '600',
-    color: 'black',
-  },
-  filters: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 8,
-    marginBottom: 16,
-    alignItems: 'center',
-  },
-  picker: {
-    width: 150,
-    height: 40,
-    borderRadius: 8,
-    color: 'black',
-    borderWidth: 1,
-    borderColor: 'black',
-  },
-  purplePicker: {
-    backgroundColor: '#9b59b6',
-  },
-  indigoPicker: {
-    backgroundColor: '#a29bfe',
-  },
-  cyanPicker: {
-    backgroundColor: '#74b9ff',
-  },
-  tealPicker: {
-    backgroundColor: '#81ecec',
-  },
-  searchInput: {
-    borderWidth: 1,
-    borderColor: '#aaa',
-    borderRadius: 8,
-    paddingHorizontal: 10,
-    height: 40,
-    flex: 1,
-    minWidth: 180,
-    backgroundColor: 'transparent',
-    color: 'black',
-    paddingTop: 10,
-  },
-  saveButton: {
-    backgroundColor: '#007d8f',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 6,
-    marginLeft: 8,
-  },
-  tableHeader: {
-    flexDirection: 'row',
-    backgroundColor: '#d2b4f2',
-    padding: 10,
-    borderTopLeftRadius: 8,
-    borderTopRightRadius: 8,
-  },
-  headerCell: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  row: {
-    flexDirection: 'row',
-    borderWidth: 1,
-    borderColor: '#ccc',
-    alignItems: 'center',
-  },
-  cell: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 10,
-  },
-  editButton: {
-    backgroundColor: '#f0f0f0',
-    padding: 6,
-    borderRadius: 6,
-    borderWidth: 1,
-    borderColor: '#999',
-  },
-  blackText: {
-    color: 'black',
-    alignSelf:"center",
-  },
-  whiteText: {
-    color: 'white',
-    alignSelf:"center",
-  },
-  editContainer: { padding: 20,  },
+  container: { padding: 16, flex: 1 },
+  tabContainer: { flexDirection: 'row', marginBottom: 16 },
+  activeTab: { backgroundColor: '#007d8f', padding: 12, borderTopLeftRadius: 12, borderTopRightRadius: 12, flex: 1, alignItems: 'center' },
+  inactiveTab: { backgroundColor: '#f0f0f0', padding: 12, borderTopLeftRadius: 12, borderTopRightRadius: 12, flex: 1, alignItems: 'center' },
+  activeTabText: { fontWeight: '600', color: 'white' },
+  tabText: { fontWeight: '600', color: 'black' },
+  filters: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: 16, alignItems: 'center' },
+  picker: { width: 150, height: 40, borderRadius: 8, color: 'white', borderWidth: 1, borderColor: 'black' },
+  purplePicker: { backgroundColor: '#9b59b6' },
+  indigoPicker: { backgroundColor: '#a29bfe' },
+  cyanPicker: { backgroundColor: '#74b9ff' },
+  tealPicker: { backgroundColor: '#81ecec' },
+  searchInput: { borderWidth: 1, borderColor: '#aaa', borderRadius: 8, paddingHorizontal: 10, height: 40, flex: 1, minWidth: 180, backgroundColor: 'transparent', color: 'black', paddingTop: 10 },
+  saveButton: { backgroundColor: '#007d8f', paddingHorizontal: 20, paddingVertical: 10, borderRadius: 6, marginLeft: 8 },
+  tableHeader: { flexDirection: 'row', backgroundColor: '#d2b4f2', padding: 10, borderTopLeftRadius: 8, borderTopRightRadius: 8 },
+  headerCell: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  row: { flexDirection: 'row', borderWidth: 1, borderColor: '#ccc', alignItems: 'center' },
+  cell: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 10 },
+  editButton: { backgroundColor: '#f0f0f0', padding: 6, borderRadius: 6, borderWidth: 1, borderColor: '#999' },
+  blackText: { color: 'black', alignSelf: 'center' },
+  whiteText: { color: 'white', alignSelf: 'center' },
+  editContainer: { padding: 20 },
   editTitle: { fontSize: 20, fontWeight: 'bold', marginBottom: 20, color: 'black', textAlign: 'center' },
-  editField: { marginBottom: 15, },
+  editField: { marginBottom: 15 },
   editLabel: { fontSize: 16, marginBottom: 5, color: 'black' },
-  editInput: { borderWidth: 1, borderColor: '#ccc', borderRadius: 5, padding: 10, fontSize: 16, color: 'black',backgroundColor:'transparent' },
+  editInput: { borderWidth: 1, borderColor: '#ccc', borderRadius: 5, padding: 10, fontSize: 16, color: 'black', backgroundColor: 'transparent' },
   editButtons: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 },
-  cancelButton: { backgroundColor: '#f0f0f0', width:'10%',marginLeft:'55%', },
-  saveEditButton: { backgroundColor: '#007d8f', width:'10%', },
+  cancelButton: { backgroundColor: '#f0f0f0', padding: 10, borderRadius: 6 },
+  saveEditButton: { backgroundColor: '#007d8f', padding: 10, borderRadius: 6 },
   checkboxContainer: { flexDirection: 'row', alignItems: 'center' },
   checkbox: { width: 18, height: 18, borderWidth: 1, borderColor: '#333', marginRight: 8, backgroundColor: '#fff' },
   checkedCheckbox: { backgroundColor: '#007d8f' },
   checkboxLabel: { color: 'black', fontSize: 16 },
-    profileHeader: {
+  profileHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20,
     gap: 15,
+    flex: 1,
+  },
+  profileHeaderRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 16,
+  },
+  editButtonsContainer: {
+    flexDirection: 'row',
+    gap: 10,
   },
   profileImage: {
     width: 64,
@@ -392,6 +322,24 @@ const styles = StyleSheet.create({
     borderRadius: 32,
     borderWidth: 1,
     borderColor: '#ccc',
+  },
+  imageContainer: {
+    position: 'relative',
+  },
+  editImageButton: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    backgroundColor: '#007d8f',
+    borderRadius: 12,
+    padding: 4,
+  },
+  editIcon: {
+    width: 16,
+    height: 16,
+  },
+  imageEditContainer: {
+    marginBottom: 15,
   },
   profileName: {
     fontSize: 20,
@@ -420,12 +368,6 @@ const styles = StyleSheet.create({
   fullField: {
     marginBottom: 15,
   },
-  profileHeaderRow: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  marginBottom: 16,
-},
 });
 
 

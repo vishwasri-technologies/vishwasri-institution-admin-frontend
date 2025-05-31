@@ -1,4 +1,6 @@
 
+
+
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet, Platform, Image, ScrollView } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
@@ -33,6 +35,7 @@ export default function StudentProfiles() {
   const [search, setSearch] = useState('');
   const [activeTab, setActiveTab] = useState('student');
   const [editingStudent, setEditingStudent] = useState(null);
+  const [editingImage, setEditingImage] = useState(false);
   const [studentForm, setStudentForm] = useState({
     name: 'Allary Hitesh',
     id: '214420862852',
@@ -48,7 +51,8 @@ export default function StudentProfiles() {
     guardianName: 'Raj Kumar',
     guardianRelation: 'Father',
     guardianEmail: 'allaryraj@gmail.com',
-    guardianMobile: '93685 21120'
+    guardianMobile: '93685 21120',
+    profileImage: 'https://randomuser.me/api/portraits/men/75.jpg'
   });
 
   const filteredStudents = studentsData.filter(student =>
@@ -57,6 +61,11 @@ export default function StudentProfiles() {
 
   const handleSaveEdit = () => {
     setEditingStudent(null);
+    setEditingImage(false);
+  };
+
+  const handleImageEdit = () => {
+    setEditingImage(!editingImage);
   };
 
   const renderItem = ({ item }) => (
@@ -65,16 +74,16 @@ export default function StudentProfiles() {
       <View style={styles.cell}><Text style={styles.blackText}>{item.id}</Text></View>
       <View style={styles.cell}>
        <TouchableOpacity
-  style={styles.editButton}
-  onPress={() => {
-    setEditingStudent(item);
-    setStudentForm({
-      ...studentForm,
-      name: item.name,
-      id: item.id,
-    });
-  }}
->
+          style={styles.editButton}
+          onPress={() => {
+            setEditingStudent(item);
+            setStudentForm({
+              ...studentForm,
+              name: item.name,
+              id: item.id,
+            });
+          }}
+        >
           <Text style={styles.blackText}>Edit Profile</Text>
         </TouchableOpacity>
       </View>
@@ -83,16 +92,26 @@ export default function StudentProfiles() {
 
   const renderEditForm = () => (
     <ScrollView contentContainerStyle={styles.editContainer} showsVerticalScrollIndicator={false}>
-      <View style={styles.profileHeader}>
-        <Image
-          source={{ uri: 'https://randomuser.me/api/portraits/men/75.jpg' }}
-          style={styles.profileImage}
-        />
-        <View>
-          <Text style={styles.profileName}>{studentForm.name}</Text>
-          <Text style={styles.profileId}>{studentForm.id}</Text>
+      <View style={styles.profileHeaderRow}>
+        <View style={styles.profileHeader}>
+          <View style={styles.imageContainer}>
+            <Image
+              source={{ uri: studentForm.profileImage }}
+              style={styles.profileImage}
+            />
+            <TouchableOpacity style={styles.editImageButton} onPress={handleImageEdit}>
+              <Image
+                source={require('../assets/note-pencil.png')}
+                style={styles.editIcon}
+              />
+            </TouchableOpacity>
+          </View>
+          <View>
+            <Text style={styles.profileName}>{studentForm.name}</Text>
+            <Text style={styles.profileId}>{studentForm.id}</Text>
+          </View>
         </View>
-        <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 20 }}>
+        <View style={styles.editButtonsContainer}>
           <TouchableOpacity style={[styles.editButton, styles.cancelButton]} onPress={() => setEditingStudent(null)}>
             <Text style={styles.blackText}>Cancel</Text>
           </TouchableOpacity>
@@ -261,25 +280,35 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row', borderWidth: 1, borderColor: '#ccc', alignItems: 'center' },
   cell: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 10 },
   editButton: { backgroundColor: '#f0f0f0', padding: 6, borderRadius: 6, borderWidth: 1, borderColor: '#999' },
-  blackText: { color: 'black',alignSelf:'center' },
-  whiteText: { color: 'white',alignSelf:'center' },
-  editContainer: { padding: 20,  },
+  blackText: { color: 'black', alignSelf: 'center' },
+  whiteText: { color: 'white', alignSelf: 'center' },
+  editContainer: { padding: 20 },
   editTitle: { fontSize: 20, fontWeight: 'bold', marginBottom: 20, color: 'black', textAlign: 'center' },
-  editField: { marginBottom: 15, },
+  editField: { marginBottom: 15 },
   editLabel: { fontSize: 16, marginBottom: 5, color: 'black' },
-  editInput: { borderWidth: 1, borderColor: '#ccc', borderRadius: 5, padding: 10, fontSize: 16, color: 'black',backgroundColor:'transparent' },
+  editInput: { borderWidth: 1, borderColor: '#ccc', borderRadius: 5, padding: 10, fontSize: 16, color: 'black', backgroundColor: 'transparent' },
   editButtons: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 },
-  cancelButton: { backgroundColor: '#f0f0f0', width:'10%',marginLeft:'55%', },
-  saveEditButton: { backgroundColor: '#007d8f', width:'10%', },
+  cancelButton: { backgroundColor: '#f0f0f0', padding: 10, borderRadius: 6 },
+  saveEditButton: { backgroundColor: '#007d8f', padding: 10, borderRadius: 6 },
   checkboxContainer: { flexDirection: 'row', alignItems: 'center' },
   checkbox: { width: 18, height: 18, borderWidth: 1, borderColor: '#333', marginRight: 8, backgroundColor: '#fff' },
   checkedCheckbox: { backgroundColor: '#007d8f' },
   checkboxLabel: { color: 'black', fontSize: 16 },
-    profileHeader: {
+  profileHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20,
     gap: 15,
+    flex: 1,
+  },
+  profileHeaderRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 16,
+  },
+  editButtonsContainer: {
+    flexDirection: 'row',
+    gap: 10,
   },
   profileImage: {
     width: 64,
@@ -287,6 +316,24 @@ const styles = StyleSheet.create({
     borderRadius: 32,
     borderWidth: 1,
     borderColor: '#ccc',
+  },
+  imageContainer: {
+    position: 'relative',
+  },
+  editImageButton: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    backgroundColor: '#007d8f',
+    borderRadius: 12,
+    padding: 4,
+  },
+  editIcon: {
+    width: 16,
+    height: 16,
+  },
+  imageEditContainer: {
+    marginBottom: 15,
   },
   profileName: {
     fontSize: 20,
@@ -315,12 +362,4 @@ const styles = StyleSheet.create({
   fullField: {
     marginBottom: 15,
   },
-  profileHeaderRow: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  marginBottom: 16,
-},
-
 });
-

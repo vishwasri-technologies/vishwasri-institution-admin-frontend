@@ -1,4 +1,4 @@
-import React from 'react';
+import React,  { useState } from 'react';
 import {
   View,
   Text,
@@ -7,10 +7,54 @@ import {
   TouchableOpacity,
   Image,
   Dimensions,
+  Alert,
 } from 'react-native';
-// import ForgotPassword from './FogotPassword';
+
 
 const LoginScreen = ({navigation }) => {
+   const [emailOrPhone, setEmailOrPhone] = useState('');
+  const [password, setPassword] = useState('');
+  const validateEmailOrPhone = (value) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\d{10}$/;
+    return emailRegex.test(value) || phoneRegex.test(value);
+  };
+
+  const handleLogin = async () => {
+    if (!emailOrPhone || !password) {
+      return Alert.alert('Error', 'All fields are required');
+    }
+
+    if (!validateEmailOrPhone(emailOrPhone)) {
+      return Alert.alert('Error', 'Enter a valid email or 10-digit phone number');
+    }
+
+    try {
+      const response = await fetch('http://192.168.29.58:5000/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          emailOrPhone,
+          password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Login failed');
+      }
+
+      Alert.alert('Success', data.message);
+      navigation.navigate('Home');
+    } catch (error) {
+      console.error('Login error:', error);
+      Alert.alert('Login Error', error.message);
+    }
+  };
+
   return (
     <View style={styles.mm}>
     <View style={styles.container}>
@@ -26,13 +70,17 @@ const LoginScreen = ({navigation }) => {
         <Text style={{color:'black',textAlign:'center',fontSize: 15,  marginBottom: 25,}}>Login to your account </Text>
 
         <Text style={styles.label}>Email/Phone</Text>
-        <TextInput style={styles.input} placeholder="Enter your Email/Phone"  placeholderTextColor="#000" />
+        <TextInput style={styles.input} placeholder="Enter your Email/Phone"  placeholderTextColor="#000" 
+        value={emailOrPhone}
+            onChangeText={setEmailOrPhone}
+            keyboardType="email-address"/>
 
         <Text style={styles.label}>Password</Text>
         <TextInput
           style={styles.input}
           placeholder="Enter your Password"  placeholderTextColor="#000"
-          secureTextEntry
+          secureTextEntry value={password}
+          onChangeText={setPassword}
         />
 
 
@@ -41,10 +89,10 @@ const LoginScreen = ({navigation }) => {
 </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Home')}>
-          <Text style={styles.buttonText}>Login</Text>
+          <Text style={styles.buttonText} onPress={handleLogin}>Login</Text>
 
         </TouchableOpacity>
-             <Text style={{color:'black',textAlign:'center',paddingTop:20,fontSize: 15}}>Already have an account?<Text style={{color:'#006BFF'}} onPress={()=> navigation.navigate('Signup')}>SignUp Here </Text></Text>
+             <Text style={{color:'black',textAlign:'center',paddingTop:20,fontSize: 15}}>Don't have an account?<Text style={{color:'#006BFF'}} onPress={()=> navigation.navigate('Signup')}> SignUp Here </Text></Text>
       </View>
     </View>
     </View>
