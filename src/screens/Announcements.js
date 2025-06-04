@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react';
 import {
   View,
@@ -7,6 +8,9 @@ import {
   StyleSheet,
   Dimensions,
   Image,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 
 const AnnouncementForm = () => {
@@ -14,50 +18,56 @@ const AnnouncementForm = () => {
   const [description, setDescription] = useState('');
   const [poster, setPoster] = useState(null);
 
-  const handleUploadPoster = () => {};
+  const handleUploadPoster = () => {
+  };
 
   return (
-    <View style={styles.wrapper}>
-      <View style={styles.container}>
-        <Text style={styles.heading}>Announcements</Text>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      style={styles.wrapper}
+    >
+      <ScrollView contentContainerStyle={styles.scrollContainer} showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>
+          <Text style={styles.heading}>Announcements</Text>
 
-        <Text style={styles.label}>Poster Title</Text>
-        <TextInput
-          style={styles.input}
-          value={title}
-          onChangeText={setTitle}
-          placeholder="Enter title"
-          placeholderTextColor="gray"
-        />
+          <Text style={styles.label}>Poster Title</Text>
+          <TextInput
+            style={styles.input}
+            value={title}
+            onChangeText={setTitle}
+            placeholder="Enter title"
+            placeholderTextColor="gray"
+          />
 
-        <Text style={styles.label}>Description</Text>
-        <TextInput
-          style={styles.textArea}
-          value={description}
-          onChangeText={setDescription}
-          placeholder="Enter description"
-          placeholderTextColor="gray"
-          multiline
-        />
+          <Text style={styles.label}>Description</Text>
+          <TextInput
+            style={styles.textArea}
+            value={description}
+            onChangeText={setDescription}
+            placeholder="Enter description"
+            placeholderTextColor="gray"
+            multiline
+          />
 
-        <Text style={styles.label}>Upload Poster</Text>
-        <TouchableOpacity style={styles.posterBox} onPress={handleUploadPoster}>
-          {poster ? (
-            <Image
-              source={{uri: poster.uri}}
-              style={{width: '100%', height: '100%'}}
-              resizeMode="contain"
-            />
-          ) : (
-            <Text style={styles.posterText}>Upload Poster</Text>
-          )}
-        </TouchableOpacity>
+          <Text style={styles.label}>Upload Poster</Text>
+          <TouchableOpacity style={styles.posterBox} onPress={handleUploadPoster}>
+            {poster ? (
+              <Image
+                source={{uri: poster.uri}}
+                style={{width: '100%', height: '100%'}}
+                resizeMode="contain"
+              />
+            ) : (
+              <Text style={styles.posterText}>Upload Poster</Text>
+            )}
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.postButton}>
-          <Text style={styles.postButtonText}>Post</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+          <TouchableOpacity style={styles.postButton}>
+            <Text style={styles.postButtonText}>Post</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -67,12 +77,14 @@ const containerWidth = width > 600 ? 400 : '90%';
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    justifyContent: 'flex-start',
+  },
+  scrollContainer: {
     paddingTop: 20,
+    paddingBottom: 40,
+    alignItems: 'flex-start',
   },
   container: {
     width: containerWidth,
-    marginLeft:40,
   },
   heading: {
     fontSize: 22,
@@ -136,3 +148,4 @@ const styles = StyleSheet.create({
 });
 
 export default AnnouncementForm;
+

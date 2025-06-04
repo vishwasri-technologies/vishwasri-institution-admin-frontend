@@ -1,4 +1,3 @@
-
 import React, {useState} from 'react';
 import {
   View,
@@ -247,7 +246,7 @@ const AttendancebyClass = () => {
     return days;
   };
 
-  const handleEdit = (student) => {
+  const handleEdit = student => {
     setEditingStudent({...student});
   };
 
@@ -256,11 +255,11 @@ const AttendancebyClass = () => {
     updatedRecords[index].status = status;
     setEditingStudent({
       ...editingStudent,
-      attendanceRecords: updatedRecords
+      attendanceRecords: updatedRecords,
     });
   };
 
-  const calculateAttendancePercentage = (records) => {
+  const calculateAttendancePercentage = records => {
     const presentCount = records.filter(r => r.status === 'Present').length;
     return Math.round((presentCount / records.length) * 100);
   };
@@ -268,19 +267,21 @@ const AttendancebyClass = () => {
   const handleSave = () => {
     setIsSaving(true);
     // Calculate new attendance percentage
-    const newPercentage = calculateAttendancePercentage(editingStudent.attendanceRecords);
-    
+    const newPercentage = calculateAttendancePercentage(
+      editingStudent.attendanceRecords,
+    );
+
     // Update the student data
     const updatedStudents = students.map(student => {
       if (student.roll === editingStudent.roll) {
         return {
           ...editingStudent,
-          attendance: `${newPercentage}%`
+          attendance: `${newPercentage}%`,
         };
       }
       return student;
     });
-    
+
     setStudents(updatedStudents);
     setEditingStudent(null);
     setIsSaving(false);
@@ -482,58 +483,67 @@ const AttendancebyClass = () => {
             <Text style={styles.cell}>Attendance</Text>
             <Text style={styles.cell}>Actions</Text>
           </View>
-          
+
           {students.map((student, idx) => (
             <View key={idx}>
               <View style={styles.row}>
                 <Text style={styles.cell}>{student.name}</Text>
                 <Text style={styles.cell}>{student.roll}</Text>
-                <Text 
+                <Text
                   style={[
                     styles.cell,
-                    {color: parseInt(student.attendance) < 75 ? 'red' : 'green'}
-                  ]}
-                >
+                    {
+                      color:
+                        parseInt(student.attendance) < 75 ? 'red' : 'green',
+                    },
+                  ]}>
                   {student.attendance}
                 </Text>
-                <TouchableOpacity 
+                <TouchableOpacity
                   style={styles.editButtonSmall}
-                  onPress={() => handleEdit(student)}
-                >
-                  <Text style={styles.editButtonTextSmall}>
-                    Edit
-                  </Text>
+                  onPress={() => handleEdit(student)}>
+                  <Text style={styles.editButtonTextSmall}>Edit</Text>
                 </TouchableOpacity>
               </View>
-              
+
               {editingStudent && editingStudent.roll === student.roll && (
                 <View style={styles.editContainer}>
                   <ScrollView horizontal>
                     <View style={styles.timeSlotsContainer}>
                       <View style={styles.timeSlotRow}>
-                        {editingStudent.attendanceRecords.map((record, index) => (
-                          <Text key={`time-${index}`} style={styles.timeSlot}>
-                            {record.time}
-                          </Text>
-                        ))}
+                        {editingStudent.attendanceRecords.map(
+                          (record, index) => (
+                            <Text key={`time-${index}`} style={styles.timeSlot}>
+                              {record.time}
+                            </Text>
+                          ),
+                        )}
                       </View>
                       <View style={styles.statusRow}>
-                        {editingStudent.attendanceRecords.map((record, index) => (
-                          <TouchableOpacity
-                            key={`status-${index}`}
-                            style={[
-                              styles.statusButton,
-                              record.status === 'Present' ? styles.presentButton : styles.absentButton
-                            ]}
-                            onPress={() => handleStatusChange(index, 
-                              record.status === 'Present' ? 'Absent' : 'Present'
-                            )}
-                          >
-                            <Text style={styles.statusButtonText}>
-                              {record.status}
-                            </Text>
-                          </TouchableOpacity>
-                        ))}
+                        {editingStudent.attendanceRecords.map(
+                          (record, index) => (
+                            <TouchableOpacity
+                              key={`status-${index}`}
+                              style={[
+                                styles.statusButton,
+                                record.status === 'Present'
+                                  ? styles.presentButton
+                                  : styles.absentButton,
+                              ]}
+                              onPress={() =>
+                                handleStatusChange(
+                                  index,
+                                  record.status === 'Present'
+                                    ? 'Absent'
+                                    : 'Present',
+                                )
+                              }>
+                              <Text style={styles.statusButtonText}>
+                                {record.status}
+                              </Text>
+                            </TouchableOpacity>
+                          ),
+                        )}
                       </View>
                     </View>
                   </ScrollView>
@@ -667,7 +677,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   cell: {
-    width: 350,
+    width: 300,
     color: '#000',
   },
   searchContainer: {
