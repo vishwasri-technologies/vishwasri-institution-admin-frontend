@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {
   View,
   Text,
@@ -9,30 +9,102 @@ import {
   ScrollView
 } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
+// Course-based mapping
+const courseData = {
+  'B.Tech': {
+    departments: [
+      { label: 'CSE', value: 'CSE' },
+      { label: 'ECE', value: 'ECE' },
+      { label: 'IT', value: 'IT' },
+      { label: 'EEE', value: 'EEE' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+      { label: '3', value: '3' },
+      { label: '4', value: '4' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+      { label: 'C', value: 'C' },
+      { label: 'D', value: 'D' },
+    ],
+    facultyNames: {
+      CSE: ['Dr.Ashwith', 'Prof.Naveen'],
+      ECE: ['Dr.Chandhu', 'Prof.Murari'],
+      IT: ['Dr.Ashok', 'Prof.Manikanta'],
+      EEE: ['Dr.Venky', 'Prof.Mahesh'],
+    },
+  },
+  'M.Tech': {
+    departments: [
+      { label: 'CSE', value: 'CSE' },
+      { label: 'ECE', value: 'ECE' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+    ],
+    facultyNames: {
+      CSE: ['Dr. Rakesh', 'Prof.Gnani'],
+      ECE: ['Dr. Shyam', 'Prof.Ram'],
+    },
+  },
+  'MBBS': {
+    departments: [
+      { label: 'General Medicine', value: 'General Medicine' },
+      { label: 'Surgery', value: 'Surgery' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+      { label: '3', value: '3' },
+      { label: '4', value: '4' },
+      { label: '5', value: '5' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+    ],
+    facultyNames: {
+      'General Medicine': ['Dr. MBBS-MED1', 'Prof. MBBS-MED2'],
+      Surgery: ['Dr.Suresh', 'Prof.Vyas'],
+    },
+  },
+};
 
 const ResultsScreen = () => {
+ 
   const [courseOpen, setCourseOpen] = useState(false);
-  const [courseValue, setCourseValue] = useState(null);
-  const [courseItems, setCourseItems] = useState([
-    { label: 'B.Tech', value: 'btech' },
-    { label: 'MBA', value: 'mba' },
-    { label: 'MCA', value: 'mca' },
-  ]);
-  const [deptOpen, setDeptOpen] = useState(false);
-  const [deptValue, setDeptValue] = useState(null);
-  const [deptItems, setDeptItems] = useState([
-    { label: 'Computer Science', value: 'cse' },
-    { label: 'Electrical', value: 'eee' },
-    { label: 'Mechanical', value: 'mech' },
-  ]);
-  const [yearOpen, setYearOpen] = useState(false);
-  const [yearValue, setYearValue] = useState(null);
-  const [yearItems, setYearItems] = useState([
-    { label: '1st', value: '1st' },
-    { label: '2nd', value: '2nd' },
-    { label: '3rd', value: '3rd' },
-    { label: '4th', value: '4th' },
-  ]);
+   const [course, setCourse] = useState(null);
+   const [courseItems, setCourseItems] = useState([
+     { label: 'M.Tech', value: 'M.Tech' },
+     { label: 'MBBS', value: 'MBBS' },
+     { label: 'B.Tech', value: 'B.Tech' },
+   ]);
+ 
+   const [deptOpen, setDeptOpen] = useState(false);
+   const [department, setDepartment] = useState(null);
+   const [deptItems, setDeptItems] = useState([]);
+ 
+   const [yearOpen, setYearOpen] = useState(false);
+   const [year, setYear] = useState(null);
+   const [yearItems, setYearItems] = useState([]);
+    // Update dependent dropdowns when course changes
+     useEffect(() => {
+       if (course && courseData[course]) {
+         setDeptItems(courseData[course].departments);
+         setYearItems(courseData[course].years);
+         // Clear selected values if course changes
+         setDepartment(null);
+         setYear(null);
+       }
+     }, [course]);
 
   return (
     <View style={styles.outerContainer}>
@@ -71,10 +143,10 @@ const ResultsScreen = () => {
           <View style={[styles.dropdownWrapper, { zIndex: 3000 }]}>
             <DropDownPicker
               open={courseOpen}
-              value={courseValue}
+              value={course}
               items={courseItems}
               setOpen={setCourseOpen}
-              setValue={setCourseValue}
+              setValue={setCourse}
               setItems={setCourseItems}
               placeholder="Select Course"
               style={styles.dropdown}
@@ -87,10 +159,10 @@ const ResultsScreen = () => {
           <View style={[styles.dropdownWrapper, { zIndex: 2000 }]}>
             <DropDownPicker
               open={deptOpen}
-              value={deptValue}
+              value={department}
               items={deptItems}
               setOpen={setDeptOpen}
-              setValue={setDeptValue}
+              setValue={setDepartment}
               setItems={setDeptItems}
               placeholder="Select Department"
               style={styles.dropdown}
@@ -103,10 +175,10 @@ const ResultsScreen = () => {
           <View style={[styles.dropdownWrapper, { zIndex: 1000 }]}>
             <DropDownPicker
               open={yearOpen}
-              value={yearValue}
+              value={year}
               items={yearItems}
               setOpen={setYearOpen}
-              setValue={setYearValue}
+              setValue={setYear}
               setItems={setYearItems}
               placeholder="Select Year"
               style={styles.dropdown}

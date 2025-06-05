@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {
   View,
   Text,
@@ -55,20 +55,99 @@ const DATA = [
   },
 ];
 
-export default function Feedback() {
-  const [openCourse, setOpenCourse] = useState(false);
-  const [valueCourse, setValueCourse] = useState(null);
-  const [courses, setCourses] = useState([
-    { label: 'B.Tech', value: 'btech' },
-    { label: 'M.Tech', value: 'mtech' },
-  ]);
+// Course-based mapping
+const courseData = {
+  'B.Tech': {
+    departments: [
+      { label: 'CSE', value: 'CSE' },
+      { label: 'ECE', value: 'ECE' },
+      { label: 'IT', value: 'IT' },
+      { label: 'EEE', value: 'EEE' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+      { label: '3', value: '3' },
+      { label: '4', value: '4' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+      { label: 'C', value: 'C' },
+      { label: 'D', value: 'D' },
+    ],
+    facultyNames: {
+      CSE: ['Dr.Ashwith', 'Prof.Naveen'],
+      ECE: ['Dr.Chandhu', 'Prof.Murari'],
+      IT: ['Dr.Ashok', 'Prof.Manikanta'],
+      EEE: ['Dr.Venky', 'Prof.Mahesh'],
+    },
+  },
+  'M.Tech': {
+    departments: [
+      { label: 'CSE', value: 'CSE' },
+      { label: 'ECE', value: 'ECE' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+    ],
+    facultyNames: {
+      CSE: ['Dr. Rakesh', 'Prof.Gnani'],
+      ECE: ['Dr. Shyam', 'Prof.Ram'],
+    },
+  },
+  'MBBS': {
+    departments: [
+      { label: 'General Medicine', value: 'General Medicine' },
+      { label: 'Surgery', value: 'Surgery' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+      { label: '3', value: '3' },
+      { label: '4', value: '4' },
+      { label: '5', value: '5' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+    ],
+    facultyNames: {
+      'General Medicine': ['Dr. MBBS-MED1', 'Prof. MBBS-MED2'],
+      Surgery: ['Dr.Suresh', 'Prof.Vyas'],
+    },
+  },
+};
 
-  const [openDept, setOpenDept] = useState(false);
-  const [valueDept, setValueDept] = useState(null);
-  const [departments, setDepartments] = useState([
-    { label: 'CSE', value: 'cse' },
-    { label: 'ECE', value: 'ece' },
-  ]);
+
+export default function Feedback() {
+   const [courseOpen, setCourseOpen] = useState(false);
+    const [course, setCourse] = useState(null);
+    const [courseItems, setCourseItems] = useState([
+      { label: 'M.Tech', value: 'M.Tech' },
+      { label: 'MBBS', value: 'MBBS' },
+      { label: 'B.Tech', value: 'B.Tech' },
+    ]);
+  
+    const [deptOpen, setDeptOpen] = useState(false);
+    const [department, setDepartment] = useState(null);
+    const [deptItems, setDeptItems] = useState([]);
+     // Update dependent dropdowns when course changes
+      useEffect(() => {
+        if (course && courseData[course]) {
+          setDeptItems(courseData[course].departments);
+       
+          
+          // Clear selected values if course changes
+          setDepartment(null);
+        
+        }
+      }, [course]);
 
   const [expandedRow, setExpandedRow] = useState(null);
 
@@ -118,30 +197,30 @@ export default function Feedback() {
       <Text style={styles.heading}>Feedback & Complaints</Text>
 
       <View style={styles.dropdownContainer}>
-        <DropDownPicker
-          open={openCourse}
-          value={valueCourse}
-          items={courses}
-          setOpen={setOpenCourse}
-          setValue={setValueCourse}
-          setItems={setCourses}
+         <DropDownPicker
+          open={courseOpen}
+          value={course}
+          items={courseItems}
+          setOpen={setCourseOpen}
+          setValue={setCourse}
+          setItems={setCourseItems}
           placeholder="Course"
-          containerStyle={styles.dropdown}
-          zIndex={3000}
-          zIndexInverse={1000}
+          style={styles.dropdown}
+          containerStyle={styles.dropdownContainer}
+          zIndex={5000}
         />
-
         <DropDownPicker
-          open={openDept}
-          value={valueDept}
-          items={departments}
-          setOpen={setOpenDept}
-          setValue={setValueDept}
-          setItems={setDepartments}
+          open={deptOpen}
+          value={department}
+          items={deptItems}
+          setOpen={setDeptOpen}
+          setValue={setDepartment}
+          setItems={setDeptItems}
           placeholder="Department"
-          containerStyle={styles.dropdown}
-          zIndex={2000}
-          zIndexInverse={2000}
+          style={styles.dropdown}
+          containerStyle={styles.dropdownContainer}
+          zIndex={4000}
+          disabled={!course}
         />
       </View>
 
@@ -176,14 +255,14 @@ const styles = StyleSheet.create({
   },
   dropdownContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent:'space-between',
     zIndex: 1000,
     marginBottom: 20,
-    width: 400,
+    width: 200,
+    gap:10,
   },
   dropdown: {
     flex: 1,
-    marginHorizontal: 5,
   },
   header: {
     flexDirection: 'row',

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {
   View,
   Text,
@@ -110,6 +110,74 @@ const months = [
   'November',
   'December',
 ];
+// Course-based mapping
+const courseData = {
+  'B.Tech': {
+    departments: [
+      { label: 'CSE', value: 'CSE' },
+      { label: 'ECE', value: 'ECE' },
+      { label: 'IT', value: 'IT' },
+      { label: 'EEE', value: 'EEE' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+      { label: '3', value: '3' },
+      { label: '4', value: '4' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+      { label: 'C', value: 'C' },
+      { label: 'D', value: 'D' },
+    ],
+    facultyNames: {
+      CSE: ['Dr.Ashwith', 'Prof.Naveen'],
+      ECE: ['Dr.Chandhu', 'Prof.Murari'],
+      IT: ['Dr.Ashok', 'Prof.Manikanta'],
+      EEE: ['Dr.Venky', 'Prof.Mahesh'],
+    },
+  },
+  'M.Tech': {
+    departments: [
+      { label: 'CSE', value: 'CSE' },
+      { label: 'ECE', value: 'ECE' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+    ],
+    facultyNames: {
+      CSE: ['Dr. Rakesh', 'Prof.Gnani'],
+      ECE: ['Dr. Shyam', 'Prof.Ram'],
+    },
+  },
+  'MBBS': {
+    departments: [
+      { label: 'General Medicine', value: 'General Medicine' },
+      { label: 'Surgery', value: 'Surgery' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+      { label: '3', value: '3' },
+      { label: '4', value: '4' },
+      { label: '5', value: '5' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+    ],
+    facultyNames: {
+      'General Medicine': ['Dr. MBBS-MED1', 'Prof. MBBS-MED2'],
+      Surgery: ['Dr.Suresh', 'Prof.Vyas'],
+    },
+  },
+};
 
 const currentYear = new Date().getFullYear();
 const years = Array.from({length: 10}, (_, i) => currentYear - 5 + i);
@@ -119,37 +187,35 @@ const AttendancebyClass = () => {
   const [courseOpen, setCourseOpen] = useState(false);
   const [course, setCourse] = useState(null);
   const [courseItems, setCourseItems] = useState([
-    {label: 'M.Tech', value: 'M.Tech'},
-    {label: 'MBBS', value: 'MBBS'},
-    {label: 'B.Tech', value: 'B.Tech'},
+   { label: 'M.Tech', value: 'M.Tech' },
+    { label: 'MBBS', value: 'MBBS' },
+    { label: 'B.Tech', value: 'B.Tech' },
   ]);
+    const [deptOpen, setDeptOpen] = useState(false);
+    const [department, setDepartment] = useState(null);
+    const [deptItems, setDeptItems] = useState([]);
+  
+    const [yearOpen, setYearOpen] = useState(false);
+    const [year, setYear] = useState(null);
+    const [yearItems, setYearItems] = useState([]);
+  
+    const [sectionOpen, setSectionOpen] = useState(false);
+    const [section, setSection] = useState(null);
+    const [sectionItems, setSectionItems] = useState([]);
+     useEffect(() => {
+        if (course && courseData[course]) {
+          setDeptItems(courseData[course].departments);
+          setYearItems(courseData[course].years);
+          setSectionItems(courseData[course].sections);
+          
+          // Clear selected values if course changes
+          setDepartment(null);
+          setYear(null);
+          setSection(null);
+        }
+      }, [course]);
 
-  const [deptOpen, setDeptOpen] = useState(false);
-  const [department, setDepartment] = useState(null);
-  const [deptItems, setDeptItems] = useState([
-    {label: 'CSE', value: 'CSE'},
-    {label: 'ECE', value: 'ECE'},
-    {label: 'IT', value: 'IT'},
-    {label: 'EEE', value: 'EEE'},
-  ]);
-
-  const [yearOpen, setYearOpen] = useState(false);
-  const [year, setYear] = useState(null);
-  const [yearItems, setYearItems] = useState([
-    {label: '1', value: '1'},
-    {label: '2', value: '2'},
-    {label: '3', value: '3'},
-    {label: '4', value: '4'},
-  ]);
-
-  const [sectionOpen, setSectionOpen] = useState(false);
-  const [section, setSection] = useState(null);
-  const [sectionItems, setSectionItems] = useState([
-    {label: 'A', value: 'A'},
-    {label: 'B', value: 'B'},
-    {label: 'C', value: 'C'},
-    {label: 'D', value: 'D'},
-  ]);
+ 
 
   // Date picker states
   const [selectedDate, setSelectedDate] = useState(new Date());

@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TextInput,Image } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 
@@ -18,6 +18,74 @@ const students = [
   { name: 'Soul Jesh', ID: '214420862321', attendance: '85%', contact: '9638520147' },
   
   ];
+  // Course-based mapping
+const courseData = {
+  'B.Tech': {
+    departments: [
+      { label: 'CSE', value: 'CSE' },
+      { label: 'ECE', value: 'ECE' },
+      { label: 'IT', value: 'IT' },
+      { label: 'EEE', value: 'EEE' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+      { label: '3', value: '3' },
+      { label: '4', value: '4' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+      { label: 'C', value: 'C' },
+      { label: 'D', value: 'D' },
+    ],
+    facultyNames: {
+      CSE: ['Dr.Ashwith', 'Prof.Naveen'],
+      ECE: ['Dr.Chandhu', 'Prof.Murari'],
+      IT: ['Dr.Ashok', 'Prof.Manikanta'],
+      EEE: ['Dr.Venky', 'Prof.Mahesh'],
+    },
+  },
+  'M.Tech': {
+    departments: [
+      { label: 'CSE', value: 'CSE' },
+      { label: 'ECE', value: 'ECE' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+    ],
+    facultyNames: {
+      CSE: ['Dr. Mtech-CSE1', 'Prof. Mtech-CSE2'],
+      ECE: ['Dr. Mtech-ECE1', 'Prof. Mtech-ECE2'],
+    },
+  },
+  'MBBS': {
+    departments: [
+      { label: 'General Medicine', value: 'General Medicine' },
+      { label: 'Surgery', value: 'Surgery' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+      { label: '3', value: '3' },
+      { label: '4', value: '4' },
+      { label: '5', value: '5' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+    ],
+    facultyNames: {
+      'General Medicine': ['Dr. MBBS-MED1', 'Prof. MBBS-MED2'],
+      Surgery: ['Dr. MBBS-SURG1', 'Prof. MBBS-SURG2'],
+    },
+  },
+};
 
 const FacultyManagement = () => {
   const [courseOpen, setCourseOpen] = useState(false);
@@ -32,11 +100,15 @@ const FacultyManagement = () => {
   const [deptOpen, setDeptOpen] = useState(false);
   const [department, setDepartment] = useState(null);
   const [deptItems, setDeptItems] = useState([
-    { label: 'CSE', value: 'CSE' },
-    { label: 'ECE', value: 'ECE' },
-    { label: 'IT', value: 'IT' },
-    { label: 'EEE', value: 'EEE' },
   ]);
+    // Update dependent dropdowns when course changes
+    useEffect(() => {
+      if (course && courseData[course]) {
+        setDeptItems(courseData[course].departments);
+        // Clear selected values if course changes
+        setDepartment(null);
+      }
+    }, [course]);
 
 
 

@@ -159,8 +159,8 @@
 //   },
 //   dropdownContainer: {
 //   flexDirection: 'row',
-//   flexWrap: 'wrap', 
-//   gap: 0, 
+//   flexWrap: 'wrap',
+//   gap: 0,
 //   marginBottom: 16,
 //   zIndex: 1000,
 // },
@@ -236,7 +236,7 @@
 
 
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {
   View,
   Text,
@@ -244,146 +244,230 @@ import {
   TouchableOpacity,
   StyleSheet,
   KeyboardAvoidingView,
-  Platform,ScrollView
+  Platform,
+  ScrollView,
+  Dimensions,
 } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import ResultsScreen from './Results';
-// import { ScrollView } from 'react-native-gesture-handler';
+// Course-based mapping
+const courseData = {
+  'B.Tech': {
+    departments: [
+      { label: 'CSE', value: 'CSE' },
+      { label: 'ECE', value: 'ECE' },
+      { label: 'IT', value: 'IT' },
+      { label: 'EEE', value: 'EEE' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+      { label: '3', value: '3' },
+      { label: '4', value: '4' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+      { label: 'C', value: 'C' },
+      { label: 'D', value: 'D' },
+    ],
+    facultyNames: {
+      CSE: ['Dr.Ashwith', 'Prof.Naveen'],
+      ECE: ['Dr.Chandhu', 'Prof.Murari'],
+      IT: ['Dr.Ashok', 'Prof.Manikanta'],
+      EEE: ['Dr.Venky', 'Prof.Mahesh'],
+    },
+  },
+  'M.Tech': {
+    departments: [
+      { label: 'CSE', value: 'CSE' },
+      { label: 'ECE', value: 'ECE' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+    ],
+    facultyNames: {
+      CSE: ['Dr. Rakesh', 'Prof.Gnani'],
+      ECE: ['Dr. Shyam', 'Prof.Ram'],
+    },
+  },
+  'MBBS': {
+    departments: [
+      { label: 'General Medicine', value: 'General Medicine' },
+      { label: 'Surgery', value: 'Surgery' },
+    ],
+    years: [
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+      { label: '3', value: '3' },
+      { label: '4', value: '4' },
+      { label: '5', value: '5' },
+    ],
+    sections: [
+      { label: 'A', value: 'A' },
+      { label: 'B', value: 'B' },
+    ],
+    facultyNames: {
+      'General Medicine': ['Dr. MBBS-MED1', 'Prof. MBBS-MED2'],
+      Surgery: ['Dr.Suresh', 'Prof.Vyas'],
+    },
+  },
+};
 
 const ExamTimetable = () => {
   const [activeTab, setActiveTab] = useState('Exams');
 
-  const [courseOpen, setCourseOpen] = useState(false);
-  const [courseValue, setCourseValue] = useState(null);
+ const [courseOpen, setCourseOpen] = useState(false);
+  const [course, setCourse] = useState(null);
   const [courseItems, setCourseItems] = useState([
-    { label: 'B.Tech', value: 'btech' },
-    { label: 'MBA', value: 'mba' },
-    { label: 'MCA', value: 'mca' },
+    { label: 'M.Tech', value: 'M.Tech' },
+    { label: 'MBBS', value: 'MBBS' },
+    { label: 'B.Tech', value: 'B.Tech' },
   ]);
 
   const [deptOpen, setDeptOpen] = useState(false);
-  const [deptValue, setDeptValue] = useState(null);
-  const [deptItems, setDeptItems] = useState([
-    { label: 'Computer Science', value: 'cse' },
-    { label: 'Electrical', value: 'eee' },
-    { label: 'Mechanical', value: 'mech' },
-  ]);
+  const [department, setDepartment] = useState(null);
+  const [deptItems, setDeptItems] = useState([]);
 
   const [yearOpen, setYearOpen] = useState(false);
-  const [yearValue, setYearValue] = useState(null);
-  const [yearItems, setYearItems] = useState([
-    { label: '1st', value: '1st' },
-    { label: '2nd', value: '2nd' },
-    { label: '3rd', value: '3rd' },
-    { label: '4th', value: '4th' },
-  ]);
+  const [year, setYear] = useState(null);
+  const [yearItems, setYearItems] = useState([]);
+   // Update dependent dropdowns when course changes
+    useEffect(() => {
+      if (course && courseData[course]) {
+        setDeptItems(courseData[course].departments);
+        setYearItems(courseData[course].years);
+        // Clear selected values if course changes
+        setDepartment(null);
+        setYear(null);
+      }
+    }, [course]);
 
   return (
-    <KeyboardAvoidingView 
-      style={{ flex: 1 }}
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-    >
+    <View style={{ flex: 1 }}>
       {/* Tab Navigation */}
       <View style={styles.tabContainer}>
         <TouchableOpacity
           style={[styles.tabButton, activeTab === 'Exams' && styles.activeTab]}
-          onPress={() => setActiveTab('Exams')}
-        >
-          <Text style={[styles.tabText, activeTab === 'Exams' && styles.activeTabText]}>
+          onPress={() => setActiveTab('Exams')}>
+          <Text
+            style={[
+              styles.tabText,
+              activeTab === 'Exams' && styles.activeTabText,
+            ]}>
             Exams
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={[styles.tabButton, activeTab === 'Results' && styles.activeTab]}
-          onPress={() => setActiveTab('Results')}
-        >
-          <Text style={[styles.tabText, activeTab === 'Results' && styles.activeTabText]}>
+          onPress={() => setActiveTab('Results')}>
+          <Text
+            style={[
+              styles.tabText,
+              activeTab === 'Results' && styles.activeTabText,
+            ]}>
             Results
           </Text>
         </TouchableOpacity>
       </View>
 
       {/* Tab Content */}
-      <View style={{ flex: 1 }}>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 60 : 0}>
         {activeTab === 'Exams' ? (
-          <View style={styles.container}>
-            <Text style={styles.heading}>Exam Timetable</Text>
-            <ScrollView showsVerticalScrollIndicator={false}>
+          <ScrollView
+            contentContainerStyle={styles.scrollContainer}
+            keyboardShouldPersistTaps="handled"
+            bounces={false}
+            nestedScrollEnabled={true}
+            showsVerticalScrollIndicator={false}>
+            <View style={styles.container}>
+              <Text style={styles.heading}>Exam Timetable</Text>
 
-            <View style={styles.dropdownContainer}>
-              <View style={styles.dropdownWrapper}>
-                <DropDownPicker
-                  open={courseOpen}
-                  value={courseValue}
-                  items={courseItems}
-                  setOpen={setCourseOpen}
-                  setValue={setCourseValue}
-                  setItems={setCourseItems}
-                  placeholder="Select Course"
-                  style={styles.dropdown}
-                  dropDownContainerStyle={styles.dropdownBox}
-                  zIndex={3000}
-                  zIndexInverse={1000}
-                />
+              <View style={styles.dropdownContainer}>
+                <View style={styles.dropdownWrapper}>
+                  <DropDownPicker
+                    open={courseOpen}
+                    value={course}
+                    items={courseItems}
+                    setOpen={setCourseOpen}
+                    setValue={setCourse}
+                    setItems={setCourseItems}
+                    placeholder="Select Course"
+                    style={styles.dropdown}
+                    dropDownContainerStyle={styles.dropdownBox}
+                    zIndex={3000}
+                    zIndexInverse={1000}
+                  />
+                </View>
+
+                <View style={styles.dropdownWrapper}>
+                  <DropDownPicker
+                    open={deptOpen}
+                    value={department}
+                    items={deptItems}
+                    setOpen={setDeptOpen}
+                    setValue={setDepartment}
+                    setItems={setDeptItems}
+                    placeholder="Select Department"
+                    style={styles.dropdown}
+                    dropDownContainerStyle={styles.dropdownBox}
+                    zIndex={2000}
+                    zIndexInverse={2000}
+                  />
+                </View>
+
+                <View style={styles.dropdownWrapper}>
+                  <DropDownPicker
+                    open={yearOpen}
+                    value={year}
+                    items={yearItems}
+                    setOpen={setYearOpen}
+                    setValue={setYear}
+                    setItems={setYearItems}
+                    placeholder="Select Year"
+                    style={styles.dropdown}
+                    dropDownContainerStyle={styles.dropdownBox}
+                    zIndex={1000}
+                    zIndexInverse={3000}
+                  />
+                </View>
               </View>
 
-              <View style={styles.dropdownWrapper}>
-                <DropDownPicker
-                  open={deptOpen}
-                  value={deptValue}
-                  items={deptItems}
-                  setOpen={setDeptOpen}
-                  setValue={setDeptValue}
-                  setItems={setDeptItems}
-                  placeholder="Select Department"
-                  style={styles.dropdown}
-                  dropDownContainerStyle={styles.dropdownBox}
-                  zIndex={2000}
-                  zIndexInverse={2000}
-                />
+              <Text style={styles.label}>Exam Title</Text>
+              <TextInput
+                style={styles.input}
+                placeholder="Enter exam title"
+                placeholderTextColor="black"
+              />
+
+              <View style={styles.uploadBox}>
+                <Text style={styles.uploadText}>Upload</Text>
               </View>
 
-              <View style={styles.dropdownWrapper}>
-                <DropDownPicker
-                  open={yearOpen}
-                  value={yearValue}
-                  items={yearItems}
-                  setOpen={setYearOpen}
-                  setValue={setYearValue}
-                  setItems={setYearItems}
-                  placeholder="Select Year"
-                  style={styles.dropdown}
-                  dropDownContainerStyle={styles.dropdownBox}
-                  zIndex={1000}
-                  zIndexInverse={3000}
-                />
-              </View>
+              <TouchableOpacity style={styles.uploadButton}>
+                <Text style={styles.uploadButtonText}>Upload</Text>
+              </TouchableOpacity>
             </View>
-
-            <Text style={styles.label}>Exam Title</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Enter exam title"
-              placeholderTextColor="black"
-            />
-
-            <View style={styles.uploadBox}>
-              <Text style={styles.uploadText}>Upload</Text>
-            </View>
-
-            <TouchableOpacity style={styles.uploadButton}>
-              <Text style={styles.uploadButtonText}>Upload</Text>
-            </TouchableOpacity>
-            </ScrollView>
-          </View>
+          </ScrollView>
         ) : (
           <ResultsScreen />
         )}
-      </View>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </View>
   );
 };
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   tabContainer: {
@@ -413,9 +497,14 @@ const styles = StyleSheet.create({
   activeTabText: {
     color: 'white',
   },
+  scrollContainer: {
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
   container: {
     flex: 1,
     padding: 16,
+    minHeight: windowHeight - 50, // Ensure container takes at least full screen height minus tab height
   },
   heading: {
     fontSize: 22,
@@ -426,32 +515,32 @@ const styles = StyleSheet.create({
   dropdownContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 0,
+    gap: 8,
     marginBottom: 16,
-    zIndex:1000,
+    zIndex: 1000,
   },
   dropdownWrapper: {
     marginRight: 8,
+    width: windowWidth < 400 ? '45%' : 180, // Adjust width for small screens
   },
   dropdown: {
     backgroundColor: '#f0f0f0',
     borderColor: '#999',
-    width: 180,
+    width: '100%',
   },
   dropdownBox: {
     backgroundColor: '#e6e6e6',
-    width: 180,
+    width: '100%',
   },
   label: {
     fontSize: 16,
     marginBottom: 4,
     marginLeft: 6,
     color: 'black',
-    width: 200,
   },
   input: {
     height: 40,
-    width: 300,
+    width: windowWidth < 400 ? '100%' : 300, // Adjust input width for small screens
     borderWidth: 1,
     borderColor: '#999',
     borderRadius: 6,
@@ -463,7 +552,7 @@ const styles = StyleSheet.create({
   },
   uploadBox: {
     height: 300,
-    width: 300,
+    width: windowWidth < 400 ? '100%' : 300, // Adjust upload box width for small screens
     borderWidth: 1,
     borderStyle: 'dashed',
     borderColor: '#ccc',
@@ -480,7 +569,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 6,
     alignItems: 'center',
-    width: 300,
+    width: windowWidth < 400 ? '100%' : 300, // Adjust button width for small screens
     alignSelf: 'flex-start',
   },
   uploadButtonText: {

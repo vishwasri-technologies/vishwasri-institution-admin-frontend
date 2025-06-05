@@ -7,9 +7,7 @@ import ForgotPassword from '../screens/FogotPassword';
 import Home from '../screens/Home';
 import TimetableScreen from '../screens/TimetableScreen';
 import AcademicCalender from '../screens/AcademicCalender';
-
 import AttendancebyClass from '../screens/AttendancebyClass';
-
 import StudentProfiles from '../screens/ManageProfiles';
 import FacultyProfiles from '../screens/FacultyProfiles';
 
@@ -19,10 +17,22 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Signup" component={SignupScreen} options={{ headerShown: false }}  />
-        <Stack.Screen name="Login" component={LoginScreen}  options={{ headerShown: false }} />
-        <Stack.Screen name="Forgot" component={ForgotPassword}  />
-        <Stack.Screen name="Home" component={Home}  options={{ headerShown: false }} />
+        <Stack.Screen
+          name="Signup"
+          component={SignupScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen name="Forgot" component={ForgotPassword} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{headerShown: false}}
+        />
         <Stack.Screen name="AcademicCalender" component={AcademicCalender} />
         <Stack.Screen name="TimetableScreen" component={TimetableScreen} />
         <Stack.Screen name="AttendancebyClass" component={AttendancebyClass} />

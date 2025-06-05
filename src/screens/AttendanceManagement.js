@@ -8,9 +8,9 @@ const AttendanceManagement = () => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
-    {label: 'Computer Science', value: 'CSE'},
-    {label: 'Electrical Engineering', value: 'EEE'},
-    {label: 'Mechanical Engineering', value: 'MEC'},
+    {label: 'B.Tech', value: 'B.Tech'},
+    {label: 'M.Tech', value: 'M.Tech'},
+    {label: 'MBBS', value: 'MBBS'},
   ]);
 
   const [subView, setSubView] = useState('main');
