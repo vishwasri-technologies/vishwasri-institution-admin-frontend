@@ -18,7 +18,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\AppX</LayoutDir>
-    <RegisteredManifestChecksum>F5540DB65897DF09F03C57C9C6F8D20DF245965485DD2F1FA79074FECA8533D2</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>E05A32372329779832A7CF709A37112F2044539E90220F5EC6A450E4BDF7BC52</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>f6cdc298-8998-474c-8cbb-1a421cc687a9_1.0.0.0_x64__0x1r3e7dampye</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>f6cdc298-8998-474c-8cbb-1a421cc687a9_0x1r3e7dampye!App</RegisteredUserModeAppID>
     <RegisteredPackageID>f6cdc298-8998-474c-8cbb-1a421cc687a9</RegisteredPackageID>
@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-05-05T07:12:52.785</Modified>
+      <Modified>2025-06-06T05:16:11.526</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\Adminapp.exe">
       <PackagePath>Adminapp.exe</PackagePath>
-      <Modified>2025-05-05T07:12:50.808</Modified>
+      <Modified>2025-06-06T05:16:10.827</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\.nuget\packages\microsoft.web.webview2\1.0.1264.42\build\..\runtimes\win-x64\native_uap\Microsoft.Web.WebView2.Core.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.dll</PackagePath>
@@ -91,7 +91,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\Adminapp.winmd">
       <PackagePath>Adminapp.winmd</PackagePath>
-      <Modified>2025-05-05T07:12:38.444</Modified>
+      <Modified>2025-06-06T05:15:51.970</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\node_modules\react-native-windows\target\x64\Debug\Microsoft.ReactNative\Microsoft.ReactNative\DevMenuControl.xbf">
       <PackagePath>Microsoft.ReactNative\DevMenuControl.xbf</PackagePath>
@@ -141,7 +141,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prash\Adminapp\windows\x64\Debug\Adminapp\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-05-05T07:12:51.732</Modified>
+      <Modified>2025-06-06T05:16:11.300</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
